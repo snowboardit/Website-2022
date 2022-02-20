@@ -13,8 +13,8 @@ function Background() {
         if (!vantaEffect) {
             setVantaEffect(CLOUDS({
                 el: vantaRef.current,
-                minHeight: 400.00,
-                minWidth: 400.00,
+                minHeight: 300.00,
+                minWidth: 300.00,
                 speed: 0.50,
                 THREE
             }))

@@ -6,7 +6,7 @@ import Hero from '../components/Hero'
 export default function Home() {
   return (
 
-    <main className="flex w-screen h-screen">
+    <main className="flex overscroll-none w-screen h-screen">
 
       <Background />
 
