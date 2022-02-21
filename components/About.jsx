@@ -5,7 +5,7 @@ function About() {
     return (
         <section className="flex bg-[#555B6E]">
             {/* LEFT PANEL */}
-            <div className="flex basis-1/2 h-screen justify-end lg:justify-end items-center">
+            <div className="flex basis-1/2 h-screen justify-end lg:justify-end items-center md:mx-16">
                 <Image alt='max portrait' className='rounded-3xl opacity-90' src='/images/me.png' width={525} height={710} />
                 <div className="drop-shadow-md">
                 </div>
@@ -14,7 +14,7 @@ function About() {
             {/* RIGHT PANEL */}
             <div className="flex flex-col basis-1/2 h-screen justify-center items-center lg:items-start">
                 {/* Main Container */}
-                <div className="flex flex-col gap-6 h-2/5 max-w-3xl md:px-32 ">
+                <div className="flex flex-col gap-6 h-2/5 max-w-3xl md:mx-16 ">
 
                     <h1 className="text-7xl text-gray-100 drop-shadow-sm">
                         Max Lareau
