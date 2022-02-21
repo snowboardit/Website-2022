@@ -1,14 +1,14 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import Background from '../components/Background'
-import Hero from '../components/Hero'
+import About from '../components/About'
 
 export default function Home() {
   return (
 
-    <main className="flex overscroll-none w-screen h-screen">
+    <main className="flex flex-col overflow-x-clip w-full h-auto">
 
       <Background />
+
+      <About />
 
     </main>
   )

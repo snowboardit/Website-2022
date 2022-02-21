@@ -4,7 +4,7 @@ import Icon from '../components/Icon'
 
 function Hero() {
     return (
-        <section className="flex flex-col gap-4 items-center justify-center h-screen z-2">
+        <section className="flex flex-col gap-4 items-center justify-center w-full h-screen z-2">
 
             <h1 className="text-6xl sm:text-8xl md:text-9xl drop-shadow-md text-[#555B6E]/75">
                 Max Lareau

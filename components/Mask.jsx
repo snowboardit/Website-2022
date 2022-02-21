@@ -1,6 +1,6 @@
 function Mask() {
     return (
-        <div className="absolute w-screen h-screen bg-gray-500/75 z-1"></div>
+        <section className='w-full h-screen absolute bg-slate-300/30 z-1'></section>
     );
 }
 
