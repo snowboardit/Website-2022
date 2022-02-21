@@ -8,6 +8,7 @@
 ## 🗃️ Stack
 - ⚛️ React & Next.js
 - 💨 Tailwind CSS
+- ⛅ Vanta for cloud graphic
 - 🎨 Figma for design
 - 📦 Netlify for deployment
 
