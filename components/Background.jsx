@@ -27,7 +27,7 @@ function Background() {
     return (
         <>
             <section className='w-screen h-screen absolute' ref={vantaRef}>
-                <section className='w-screen h-screen absolute bg-slate-200/30 z-1'></section>
+                <section className='w-screen h-screen absolute bg-slate-200/30'></section>
                 <Hero />
             </section>
         </>
