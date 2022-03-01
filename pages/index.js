@@ -1,15 +1,30 @@
+import { useState, useEffect } from 'react'
 import Background from '../components/Background'
 import About from '../components/About'
+import Loader from '../components/Loader'
 
 export default function Home() {
-  return (
 
-    <main className="flex flex-col overflow-x-clip w-full h-auto">
+  const [loading, setLoading] = useState(true)
+  const [time, setTime] = useState()
 
-      <Background />
+  useEffect(() => { setLoading(false) });
 
-      <About />
+  if (!loading) {
 
-    </main>
-  )
+    return (
+
+      <main className="flex flex-col overflow-x-clip w-full h-auto">
+
+        <Background />
+
+        <About />
+
+      </main>
+
+    )
+  }
+
+  return <Loader loading={loading} />
+
 }
