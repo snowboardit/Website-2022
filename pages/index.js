@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react'
 import Background from '../components/Background'
-import About from '../components/About'
+import About from '../components/About/About'
 import Loader from '../components/Loader'
 
 export default function Home() {
 
   const [loading, setLoading] = useState(true)
-  const [time, setTime] = useState()
 
   useEffect(() => { setLoading(false) });
 
@@ -14,7 +13,7 @@ export default function Home() {
 
     return (
 
-      <main className="flex flex-col overflow-x-clip w-full h-auto">
+      <main className="snap-mandatory snap-y flex flex-col overflow-x-clip w-full h-auto">
 
         <Background />
 

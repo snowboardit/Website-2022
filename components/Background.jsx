@@ -31,15 +31,14 @@ function Background() {
     }, [vantaEffect])
 
     return (
-        <>
-            <section className='flex w-full h-screen' ref={vantaRef}>
 
-                <Mask />
+        <section className='snap-center flex w-full h-screen' ref={vantaRef}>
 
-                <Hero />
+            <Mask />
 
-            </section>
-        </>
+            <Hero />
+
+        </section>
 
     )
 
