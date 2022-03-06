@@ -32,7 +32,7 @@ function Background() {
 
     return (
 
-        <section className='snap-center flex w-full h-screen' ref={vantaRef}>
+        <section className='snap-center flex w-full h-screen drop-shadow-md' ref={vantaRef}>
 
             <Mask />
 
