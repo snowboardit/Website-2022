@@ -1,4 +1,5 @@
 # [Maxlareau.com](https://maxlareau.com) updated for 2022! 🍾
+A place to show off my skills and a new home to display what projects I've been working on.
 
 ## 🗃️ Stack
 - ⚛️ **React & Next.js:** Allow for a quick, versatile, and lightweight front-end
