@@ -2,7 +2,7 @@
 A place to show off my skills and a new home to display what projects I've been working on.
 
 ## 🗃️ Stack
-- ⚛️ **React & Next.js:** Allow for a quick, versatile, and lightweight front-end
+- ⚛️ **React & Next.js:** Allow for a quick, versatile, and lightweight front-end (with fantastic DX!)
 - 💨 **Tailwind CSS:** Efficient styling for the site and components alike
 - ⛅ **Vanta:** Used to generate the 3D cloud graphic
 - 🎨 **Figma:** Design and playground for ideas
