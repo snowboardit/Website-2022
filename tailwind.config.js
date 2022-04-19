@@ -8,6 +8,9 @@ module.exports = {
       colors: {
         maxLightGray: '#DCDDDB',
         maxDarkGray: '#555B6E'
+      },
+      backgroundImage: {
+        'circuit-pattern': "url('/images/circuit-board.svg')"
       }
     },
   },

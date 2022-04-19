@@ -5,14 +5,15 @@ import CircuitBG from './CircuitBG';
 function About() {
 
     return (
-        <section className="flex h-auto min-h-screen lg:h-screen w-full justify-evenly items-center bg-maxLightGray">
+        <section className="flex flex-col lg:flex-row min-h-screen lg:h-screen w-full justify-evenly items-center bg-maxLightGray">
 
             {/* LEFT PANEL */}
             <div className="relative flex h-full w-full lg:w-1/2 justify-center items-center border-r-[1px] border-black/20">
 
-                <CircuitBG />
+                <CircuitBG>
+                    <LeftPanel />
+                </CircuitBG>
 
-                <LeftPanel />
 
             </div>
 
