@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Background images/textures */
+.bg-circuitboard {
+  background-image: url("/images/circuit-board.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}

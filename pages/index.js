@@ -10,11 +10,9 @@ export default function Home() {
 
   useEffect(() => { setLoading(false) });
 
-  if (!loading) {
+  return !loading && (
 
-    return (
-
-      <main className="snap-mandatory snap-y flex flex-col overflow-x-clip w-full h-auto">
+      <main className="flex flex-col overflow-x-clip w-full h-auto">
 
         <Background />
 
@@ -25,7 +23,7 @@ export default function Home() {
       </main>
 
     )
-  }
+  
 
   return <Loader loading={loading} />
 

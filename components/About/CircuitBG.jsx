@@ -1,13 +1,9 @@
-import Image from 'next/image'
-
 function CircuitBG({ children }) {
-    return (
-
-        <div className="h-full w-full bg-circuit-pattern object-center object-cover pointer-events-none bg-opacity-20">
-            {children}
-        </div>
-
-    );
+  return (
+    <div className="flex justify-center items-center w-full h-screen pt-36 bg-circuitboard pointer-events-none">
+      {children}
+    </div>
+  );
 }
 
 export default CircuitBG;
