@@ -9,3 +9,11 @@
   background-repeat: no-repeat;
   background-position: center center;
 }
+
+.text-clamp-lg {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.text-clamp-md {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+}
