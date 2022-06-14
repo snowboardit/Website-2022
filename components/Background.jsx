@@ -1,47 +1,41 @@
-import React, { useState, useEffect, useRef } from 'react';
-import * as THREE from 'three'
-import CLOUDS from 'vanta/dist/vanta.clouds.min'
-import Hero from '../components/Hero'
-import Mask from '../components/Mask'
-
+import React, { useState, useEffect, useRef } from "react";
+import * as THREE from "three";
+import CLOUDS from "vanta/dist/vanta.clouds.min";
+import Hero from "../components/Hero";
+import Mask from "../components/Mask";
 
 function Background() {
+  const [vantaEffect, setVantaEffect] = useState(0);
+  const vantaRef = useRef(null);
 
-    const [vantaEffect, setVantaEffect] = useState(0)
-    const vantaRef = useRef(null)
+  useEffect(() => {
+    if (!vantaEffect) {
+      setVantaEffect(
+        CLOUDS({
+          el: vantaRef.current,
+          minHeight: 300.0,
+          minWidth: 300.0,
+          speed: 0.5,
+          THREE,
+        })
+      );
+    }
 
-    useEffect(() => {
+    return () => {
+      if (vantaEffect) vantaEffect.destroy();
+    };
+  }, [vantaEffect]);
 
-        if (!vantaEffect) {
+  return (
+    <section
+      className="snap-center flex w-full h-screen drop-shadow-md"
+      ref={vantaRef}
+    >
+      <Mask />
 
-            setVantaEffect(CLOUDS({
-                el: vantaRef.current,
-                minHeight: 300.00,
-                minWidth: 300.00,
-                speed: 0.50,
-                THREE
-            }))
-
-        }
-
-        return () => {
-            if (vantaEffect) vantaEffect.destroy()
-        }
-
-    }, [vantaEffect])
-
-    return (
-
-        <section className='snap-center flex w-full h-screen drop-shadow-md' ref={vantaRef}>
-
-            <Mask />
-
-            <Hero />
-
-        </section>
-
-    )
-
+      <Hero />
+    </section>
+  );
 }
 
 export default Background;

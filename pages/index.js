@@ -10,8 +10,9 @@ export default function Home() {
 
   useEffect(() => { setLoading(false) });
 
-  return !loading && (
-
+  return loading
+    ? (<Loader loading={loading} />)
+    : (
       <main className="flex flex-col overflow-x-clip w-full h-auto">
 
         <Background />
@@ -21,10 +22,5 @@ export default function Home() {
         {/* <Portfolio /> */}
 
       </main>
-
     )
-  
-
-  return <Loader loading={loading} />
-
 }
