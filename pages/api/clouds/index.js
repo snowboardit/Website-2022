@@ -1,11 +1,14 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import axios from "axios";
-import skyColors from "./skyColors.json";
 
-
+// Currently set to general Brunswick area
 const LAT = 43.9140;
 const LON = 69.9670;
 
+// Container host takes precedence, then env file host, then default
+const HOST = process.env.HOST || process.env.NEXT_PUBLIC_CHOSEN_HOST
+
+console.log("HOST: ", HOST)
 
 export default async function handler(req, res) {
 
@@ -16,19 +19,64 @@ export default async function handler(req, res) {
 }
 
 /**
- * TODO - function getSkyColor(currentDateTime)
- * 1. Generate current date and time for request
- * 2. Call getSkyColors function, passing current date and time as an arg
+ * 1. Pass in current date and time for request
  * 3. Look up appropriate sky colors for given time
- * 4. return sky colors in json
+ * 4. return appropriate sky colors in json
+ * 
+ * @param currentDateTime: Date - current date/time
+ * @returns currentSkyColor: Object - skycolor object to present to frontend
  */
 
 async function getCurrentSkyColors(currentDateTime) {
 
+  const skyColors = await getSkyColors();
   const sunTimes = await getSunTimes();
+  let currentSkyColor = {};
 
+  console.log("SKY COLORS: ", skyColors.night)
 
-  console.log("orig sunset: ", sunTimes.sunset, "\norig sunrise: ", sunTimes.sunrise);
+  /** 
+   *  ALL TIMES CONVERTED TO EASTERN
+   *  Dawn: from sunTimes.astronomical_twilight_begin - sunTimes.sunrise
+   *  Day: sunTimes.sunrise - sunTimes.sunset
+   *  Dusk: sunTimes.sunset - sunTimes.astronomical_twilight_end
+   *  Night: all other times
+   */
+  const astro_twilight_begin = new Date(sunTimes.astronomical_twilight_begin);
+  const sunrise = new Date(sunTimes.sunrise);
+  const sunset = new Date(sunTimes.sunset);
+  const astro_twilight_end = new Date(sunTimes.astronomical_twilight_end);
+
+  switch (currentDateTime) {
+    // Night: Between astro twighlight end and astro twighlight begin
+    case currentDateTime > astro_twilight_end && currentDateTime < astro_twilight_begin:
+      currentSkyColor = skyColors.night
+
+    // Dawn: Between astro twighlight beginning and sunrise
+    case currentDateTime > astro_twilight_begin && currentDateTime < sunrise:
+      currentSkyColor = skyColors.dawn
+
+    // Dusk: Between sunset and astro twighlight end
+    case currentDateTime > sunset && currentDateTime < astro_twilight_end:
+      currentSkyColor = skyColors.dusk
+
+    // Day: Between sunrise and sunset
+    case currentDateTime > sunrise && currentDateTime < sunset:
+      currentSkyColor = skyColors.day
+
+    default:
+      currentSkyColor = skyColors.dawn
+      console.log("HIT DEFAULT CASE - CUR SKY COLOR: \n", currentSkyColor)
+  }
+
+  // console.log("astro twighlight begin", astro_twilight_begin)
+  // console.log("astro twighlight end", astro_twilight_end)
+  // console.log("sunrise", sunrise)
+  // console.log("sunset", sunset)
+
+  console.log("current sky color", currentSkyColor)
+
+  return currentSkyColor
 
 }
 
@@ -41,7 +89,7 @@ async function getCurrentSkyColors(currentDateTime) {
 async function getSunTimes() {
 
   try {
-    const { data } = await axios.get(`https://api.sunrise-sunset.org/json?lat=${LAT}&lng=${LON}`);
+    const { data } = await axios.get(`https://api.sunrise-sunset.org/json?lat=${LAT}&lng=${LON}&formatted=0`);
     return data.results;
   } catch (err) {
     console.log("couldn't get sun times: ", err)
@@ -63,4 +111,13 @@ async function getSunTimes() {
     }
    */
 
+}
+
+/**
+ * Get skyColors object from server
+ * @returns skyColors: Object
+ */
+async function getSkyColors() {
+  const { data } = await axios.get(`${HOST}/skyColors.json`);
+  return data.skyColors;
 }

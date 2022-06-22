@@ -1,0 +1,40 @@
+{
+    "skyColors": {
+      "dawn": {
+        "backgroundColor": "#50000",
+        "skyColor": "#576391",
+        "cloudColor": "#896f6f",
+        "cloudShadowColor": "#1d174a",
+        "sunColor": "#ff6526",
+        "sunGlareColor": "#ff692b",
+        "sunlightColor": "#ff2000"
+      },
+      "day": {
+        "backgroundColor": "#ffffff",
+        "skyColor": "#68b8d7",
+        "cloudColor": "#adc1de",
+        "cloudShadowColor": "#183550",
+        "sunColor": "#ff9919",
+        "sunGlareColor": "#ff6633",
+        "sunlightColor": "#ff9933"
+      },
+      "dusk": {
+        "backgroundColor": "#50000",
+        "skyColor": "#3b469d",
+        "cloudColor": "#896f6f",
+        "cloudShadowColor": "#3004a",
+        "sunColor": "#ca0000",
+        "sunGlareColor": "#c03600",
+        "sunlightColor": "#d90100"
+      },
+      "night": {
+        "backgroundColor": "#50000",
+        "skyColor": "#1b",
+        "cloudColor": "#50507",
+        "cloudShadowColor": "#d0d0f",
+        "sunColor": "#0",
+        "sunGlareColor": "#140e0e",
+        "sunlightColor": "#55483d"
+      }
+    }
+  }
