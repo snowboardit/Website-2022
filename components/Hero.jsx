@@ -1,29 +1,31 @@
-import Image from "next/image"
-import Link from "next/link"
-import Icon from '../components/Icon'
+import Icon from "../components/Icon";
 
 function Hero() {
-    return (
-        <section className="flex flex-col gap-4 items-center justify-center w-full h-screen z-2">
+  return (
+    <div className="relative flex flex-col items-center justify-center w-full h-screen z-[3]">
+      <div className="flex flex-col justify-center items-center">
+        <h1 className="text-6xl sm:text-8xl md:text-9xl drop-shadow-md text-[#555B6E]/75">
+          Max Lareau
+        </h1>
 
-            <h1 className="text-6xl sm:text-8xl md:text-9xl drop-shadow-md text-[#555B6E]/75">
-                Max Lareau
-            </h1>
+        <h3 className="text-sm mt-2 sm:text-xl md:text-3xl drop-shadow-md text-[#555B6E]/75">
+          Systems Engineer // Software Developer // Pilot
+        </h3>
+      </div>
 
-            <h3 className="text-sm -mt-2 sm:text-xl md:text-3xl drop-shadow-md text-[#555B6E]/75">
-                Systems Engineer // Software Developer // Pilot
-            </h3>
+      <div className="flex justify-center items-center mt-4 md:mt-8 space-x-2 md:space-x-4">
+        <Icon
+          linkTo={"https://github.com/snowboardit"}
+          src={"/icons/icons8-github.svg"}
+        />
 
-            <div className="flex flex-row gap-x-2 md:gap-x-4">
-
-                <Icon linkTo={'https://github.com/snowboardit'} src={'/icons/icons8-github.svg'} />
-
-                <Icon linkTo={'https://linkedin.com/in/maxlareau'} src={'/icons/icons8-linkedin.svg'} />
-
-            </div>
-
-        </section>
-    );
+        <Icon
+          linkTo={"https://linkedin.com/in/maxlareau"}
+          src={"/icons/icons8-linkedin.svg"}
+        />
+      </div>
+    </div>
+  );
 }
 
 export default Hero;

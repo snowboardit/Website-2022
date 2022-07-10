@@ -1,7 +1,7 @@
 function Mask() {
-    return (
-        <section className='w-full h-screen absolute bg-slate-300/30 z-1'></section>
-    );
+  return (
+    <section className="absolute w-full h-screen bg-slate-300/25 z-[2]"></section>
+  );
 }
 
 export default Mask;
