@@ -13,22 +13,20 @@ function TypedText() {
   ];
 
   return (
-    <div className="flex justify-center">
-      <div className="absolute w-4/5 bottom-0 pb-5 flex justify-center gap-x-2">
-        <span className="text-2xl font-medium whitespace-nowrap text-maxLightGray">
-          I love
-        </span>
+    <div className="flex justify-start p-4 xl:p-8 space-x-2">
+      <span className="text-2xl font-medium whitespace-nowrap text-maxLightGray">
+        I love
+      </span>
 
-        <span className="text-2xl font-bold text-maxLightGray">
-          <Typewriter
-            options={{
-              strings: typedTextList,
-              autoStart: true,
-              loop: true,
-            }}
-          />
-        </span>
-      </div>
+      <span className="text-2xl font-bold text-maxLightGray">
+        <Typewriter
+          options={{
+            strings: typedTextList,
+            autoStart: true,
+            loop: true,
+          }}
+        />
+      </span>
     </div>
   );
 }

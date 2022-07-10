@@ -13,7 +13,7 @@ export default function Home() {
   return loading
     ? (<Loader loading={loading} />)
     : (
-      <main className="flex flex-col overflow-x-hidden w-full h-auto">
+      <main className="flex flex-col w-full">
 
         <Background />
 
