@@ -11,37 +11,43 @@ console.log("HOST: ", HOST);
 
 function Background() {
   const [vantaEffect, setVantaEffect] = useState(0);
-  const [currentSkyColor, setCurrentSkyColor] = useState(0);
+  const [currentSkyColor, setCurrentSkyColor] = useState({});
   const vantaRef = useRef(null);
 
+  // fetch sky colors
   useEffect(() => {
     async function updateSkyColor() {
       const skyColor = await getCurrentSkyColor();
-      setCurrentSkyColor(skyColor);
-      console.log("CURRENT SKY COLOR UPDATED STATE: ", skyColor);
+      setCurrentSkyColor({ ...skyColor });
+      // console.log("CURRENT SKY COLOR UPDATED STATE: ", skyColor);
     }
 
     updateSkyColor();
+    console.log(currentSkyColor);
   }, []);
 
+  // initialize and update vanta background
   useEffect(() => {
-    if (!vantaEffect) {
+    if (vantaEffect && currentSkyColor) {
+      vantaEffect.setOptions({ ...currentSkyColor });
+      console.log("vanta effect colors updated");
+    } else {
       setVantaEffect(
         CLOUDS({
           el: vantaRef.current,
           minHeight: 300.0,
           minWidth: 300.0,
           speed: 0.5,
-          ...currentSkyColor,
           THREE,
         })
       );
+      console.log("init vanta effect");
     }
 
-    return () => {
-      if (vantaEffect) vantaEffect.destroy();
-    };
-  }, [vantaEffect]);
+    // return () => {
+    //   if (vantaEffect) vantaEffect.destroy();
+    // };
+  }, [vantaEffect, currentSkyColor]);
 
   return (
     <section className="relative">

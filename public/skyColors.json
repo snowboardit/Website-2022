@@ -1,7 +1,7 @@
 {
     "skyColors": {
       "dawn": {
-        "backgroundColor": "#50000",
+        "backgroundColor": "#500000",
         "skyColor": "#576391",
         "cloudColor": "#896f6f",
         "cloudShadowColor": "#1d174a",
@@ -19,7 +19,7 @@
         "sunlightColor": "#ff9933"
       },
       "dusk": {
-        "backgroundColor": "#50000",
+        "backgroundColor": "#500000",
         "skyColor": "#3b469d",
         "cloudColor": "#896f6f",
         "cloudShadowColor": "#3004a",
@@ -28,11 +28,11 @@
         "sunlightColor": "#d90100"
       },
       "night": {
-        "backgroundColor": "#50000",
-        "skyColor": "#1b",
-        "cloudColor": "#50507",
-        "cloudShadowColor": "#d0d0f",
-        "sunColor": "#0",
+        "backgroundColor": "#500000",
+        "skyColor": "#1b1b1b",
+        "cloudColor": "#505070",
+        "cloudShadowColor": "#d0d0f0",
+        "sunColor": "#000000",
         "sunGlareColor": "#140e0e",
         "sunlightColor": "#55483d"
       }
