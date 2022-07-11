@@ -13,7 +13,7 @@ function About() {
       </div>
 
       {/* RIGHT PANEL */}
-      <div className="flex flex-col grow min-h-screen lg:h-screen w-full max-w-3xl justify-start lg:justify-center items-center px-4 mt-8 lg:mx-24 lg:mt-0">
+      <div className="flex flex-col grow min-h-screen lg:h-screen w-full max-w-3xl justify-start lg:justify-center items-center px-4 mt-8 lg:mx-12 lg:mt-0">
         <RightPanel />
       </div>
     </section>

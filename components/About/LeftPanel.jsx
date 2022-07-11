@@ -3,14 +3,18 @@ import TypedText from "./TypedText";
 
 function LeftPanel() {
   return (
-    <div className="flex-col max-w-[400px] xl:max-w-[500px] xl:mx-16 rounded-3xl bg-maxDarkGray bg-opacity-[99%] shadow-md">
-      <img
-        alt="max portrait"
-        className="pointer-events-none"
-        src="/images/me.png"
-        layout="fill"
-      />
-      <TypedText />
+    <div className="relative flex-col max-w-[400px] xl:max-w-[500px] xl:mx-16">
+      <div className="h-full -mb-96">
+        <img
+          alt="max portrait"
+          className="rounded-b-xl pointer-events-none"
+          src="/images/me.png"
+          layout="fill"
+        />
+      </div>
+      <div className="rounded-3xl bg-maxDarkGray bg-opacity-[99%] shadow-md pt-96">
+        <TypedText />
+      </div>
     </div>
   );
 }
