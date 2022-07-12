@@ -28,18 +28,20 @@ function Hero() {
         />
       </div>
 
-      <div className="relative flex flex-col items-center justify-center w-full h-screen z-[3]">
+      <div className="relative flex flex-col items-center justify-center w-full h-screen z-[3] leading-tight">
         <div className="flex flex-col justify-center items-center text-center">
-          <h1 className="text-6xl sm:text-8xl md:text-9xl drop-shadow-md text-[#555B6E]/75">
+          <h1 className="text-clamp-xl drop-shadow-md text-[#555B6E]/75">
             Max Lareau
           </h1>
+          {/* text-6xl sm:text-8xl md:text-9xl */}
 
-          <h3 className="text-sm mt-2 sm:text-xl md:text-3xl drop-shadow-md text-[#555B6E]/75">
+          <h3 className="text-clamp-lg drop-shadow-md text-[#555B6E]/75">
             Systems Engineer // Software Developer // Pilot
           </h3>
+          {/* text-sm mt-2 sm:text-xl md:text-3xl */}
         </div>
 
-        <div className="flex justify-center items-center mt-4 md:mt-8 space-x-2 md:space-x-4">
+        <div className="flex justify-center items-center mt-8 space-x-2 md:space-x-4">
           <Icon
             linkTo={"https://github.com/snowboardit"}
             src={"/icons/icons8-github.svg"}
