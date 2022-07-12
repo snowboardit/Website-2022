@@ -50,7 +50,6 @@ function Background() {
   }, [vantaEffect, currentSkyColor]);
 
   return (
-    // TODO MAKE LOADING SCREEN FADE OUT WHEN PAGE LOADED
     <section className="relative">
       {/* BACKGROUND CLOUDS - Z-1 */}
       <div

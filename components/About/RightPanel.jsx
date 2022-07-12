@@ -16,7 +16,7 @@ function RightPanel() {
       </div>
 
       <div className="sm:w-full">
-        <h3 className="text-clamp-lg font-semibold text-center sm:text-left text-maxDarkGray">
+        <h3 className="text-3xl font-semibold text-center sm:text-left text-maxDarkGray">
           Skills
         </h3>
 
