@@ -54,7 +54,7 @@ function Background() {
     <section className="relative">
       {/* BACKGROUND CLOUDS - Z-1 */}
       <div
-        className="absolute flex w-full h-screen drop-shadow-md z-[1]"
+        className="absolute flex w-full h-screen overflow-x-hidden drop-shadow-md z-[1]"
         ref={vantaRef}
       ></div>
 
