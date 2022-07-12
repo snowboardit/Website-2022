@@ -19,7 +19,7 @@ export default function Home() {
     <>
       <Loader loading={loading} />
 
-      <main className="flex flex-col w-full">
+      <main className={`flex flex-col w-full ${loading && "pointer-events-none overflow-hidden h-screen"}`}>
 
         <Background />
 
@@ -28,7 +28,7 @@ export default function Home() {
         {/* <Portfolio /> */}
 
       </main>
-
     </>
+
   )
 }

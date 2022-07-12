@@ -34,7 +34,7 @@ function Hero() {
             Max Lareau
           </h1>
 
-          <h3 className="text-sm whitespace-nowrap mt-2 sm:text-xl md:text-3xl drop-shadow-md text-[#555B6E]/75">
+          <h3 className="text-sm mt-2 sm:text-xl md:text-3xl drop-shadow-md text-[#555B6E]/75">
             Systems Engineer // Software Developer // Pilot
           </h3>
         </div>

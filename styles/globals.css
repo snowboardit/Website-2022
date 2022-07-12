@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+.skyGradientBackground {
+  background: rgb(118, 206, 240);
+  background: radial-gradient(
+    circle,
+    rgba(118, 206, 240, 1) 0%,
+    rgba(147, 212, 255, 1) 100%
+  );
+}
+
 /* Background images/textures */
 .bg-circuitboard {
   background-image: url("/images/circuit-board.svg");
@@ -17,4 +26,3 @@
 .text-clamp-md {
   font-size: clamp(1.25rem, 2.5vw, 1.75rem);
 }
-
