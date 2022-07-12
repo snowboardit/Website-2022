@@ -12,7 +12,8 @@ function Loader({ loading }) {
         animationData={planeLottie}
         loop
         play
-        style={{ width: "50%", height: "50%" }}
+        style={{ width: "100%", height: "100%" }}
+        className="sm:max-w-3xl"
       />
     </section>
   );

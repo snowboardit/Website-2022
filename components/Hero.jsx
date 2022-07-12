@@ -29,7 +29,7 @@ function Hero() {
       </div>
 
       <div className="relative flex flex-col items-center justify-center w-full h-screen z-[3]">
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center text-center">
           <h1 className="text-6xl sm:text-8xl md:text-9xl drop-shadow-md text-[#555B6E]/75">
             Max Lareau
           </h1>
