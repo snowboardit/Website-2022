@@ -1,5 +1,5 @@
 import Lottie from "react-lottie-player";
-import planeLottie from "../public/lotties/plane2.json";
+import planeLottie from "../public/lotties/2d-airplane.json";
 
 function Loader({ loading }) {
   return (
@@ -10,10 +10,10 @@ function Loader({ loading }) {
     >
       <Lottie
         animationData={planeLottie}
-        loop
         play
-        style={{ width: "100%", height: "100%" }}
-        className="max-w-4xl"
+        speed={1.25}
+        style={{ width: "75%", height: "75%" }}
+        className="max-w-xl"
       />
     </section>
   );

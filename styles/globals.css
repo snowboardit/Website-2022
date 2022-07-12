@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .skyGradientBackground {
-  background: rgb(118, 206, 240);
+  background: rgb(213, 240, 239);
   background: radial-gradient(
     circle,
-    rgba(118, 206, 240, 1) 0%,
-    rgba(147, 212, 255, 1) 100%
+    rgba(213, 240, 239, 1) 0%,
+    rgba(118, 206, 240, 1) 100%
   );
 }
 
