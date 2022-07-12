@@ -60,7 +60,7 @@ async function getCurrentSkyColors(currentDateTime) {
       currentSkyColor = skyColors.day
 
     default:
-      currentSkyColor = skyColors.night
+      currentSkyColor = skyColors.day
 
       console.log("HIT DEFAULT CASE - CUR SKY COLOR: \n", currentSkyColor)
 

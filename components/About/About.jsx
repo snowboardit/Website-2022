@@ -5,7 +5,7 @@ import CircuitBG from "./CircuitBG";
 
 function About() {
   const { ref } = useParallax({
-    speed: -20,
+    speed: -25,
   });
 
   return (

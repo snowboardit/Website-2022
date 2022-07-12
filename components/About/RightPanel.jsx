@@ -3,7 +3,7 @@ import SVG from "react-inlinesvg";
 function RightPanel() {
   return (
     <>
-      <h1 className="text-7xl text-maxDarkGray text-left w-full drop-shadow-sm mb-6">
+      <h1 className="text-7xl text-maxDarkGray text-left font-semibold w-full drop-shadow-sm mb-6">
         Max Lareau
       </h1>
 
@@ -16,10 +16,12 @@ function RightPanel() {
       </div>
 
       <div className="w-full">
-        <h3 className="text-clamp-lg text-maxDarkGray mb-4">Skills:</h3>
+        <h3 className="text-clamp-lg font-semibold text-center sm:text-left text-maxDarkGray">
+          Skills:
+        </h3>
 
-        <ol className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-clamp-md text-maxDarkGray">
-          <li className="flex justify-start items-center">
+        <ol className="grid grid-cols-1 sm:grid-cols-2 gap-6 my-4 text-clamp-md text-maxDarkGray">
+          <li className="flex justify-center sm:justify-start items-center">
             <SVG
               src="/icons/icons8-m365.svg"
               title="Microsoft 365 logo"

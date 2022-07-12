@@ -8,11 +8,17 @@ export default function Home() {
 
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => { setLoading(false) });
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+      console.log("timeout")
+    }, 2500)
+  });
 
-  return loading
-    ? (<Loader loading={loading} />)
-    : (
+  return (
+    <>
+      <Loader loading={loading} />
+
       <main className="flex flex-col w-full">
 
         <Background />
@@ -22,5 +28,7 @@ export default function Home() {
         {/* <Portfolio /> */}
 
       </main>
-    )
+
+    </>
+  )
 }
