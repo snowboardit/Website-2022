@@ -10,6 +10,7 @@ function About() {
 
   return (
     <section
+      id="about"
       ref={ref}
       className="flex flex-col lg:flex-row min-h-screen lg:h-screen w-full justify-center items-center bg-maxLightGray"
     >

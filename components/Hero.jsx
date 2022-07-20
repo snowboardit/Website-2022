@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Icon from "../components/Icon";
 import SVG from "react-inlinesvg";
 
@@ -28,6 +29,7 @@ function Hero() {
         />
       </div>
 
+      {/* Name, subtitle, and socials */}
       <div className="relative flex flex-col items-center justify-center w-full h-screen z-[3] leading-tight">
         <div className="flex flex-col justify-center items-center text-center">
           <h1 className="text-clamp-xl drop-shadow-md text-[#555B6E]/75">
@@ -55,6 +57,17 @@ function Hero() {
           />
         </div>
       </div>
+
+      {/* Bouncing arrows */}
+
+      <Link href="#about">
+        <a className="absolute bottom-0 left-1/2 -translate-x-1/2 z-[3]">
+          <SVG
+            src={"/icons/circle-arrow-down.svg"}
+            className="w-24 h-24 fill-maxDarkGray/90 animate-bounce"
+          />{" "}
+        </a>
+      </Link>
     </>
   );
 }
