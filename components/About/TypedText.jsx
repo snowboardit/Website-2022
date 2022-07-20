@@ -9,7 +9,8 @@ function TypedText() {
     "piloting gliders & airplanes",
     "listening to all kinds of music",
     "snowboarding (with friends!)",
-    "building with new and innovative tech!",
+    "building with cutting-edge tech",
+    "understanding how things work",
   ];
 
   return (
