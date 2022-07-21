@@ -24,7 +24,7 @@ function Background() {
 
     updateSkyColor();
     console.log(currentSkyColor);
-  }, []);
+  });
 
   // initialize and update vanta background
   useEffect(() => {

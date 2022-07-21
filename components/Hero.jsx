@@ -41,9 +41,9 @@ function Hero() {
             <h3 className="text-clamp-lg drop-shadow-md text-[#555B6E]/75">
               <Zoom delay={3400} triggerOnce cascade className="inline">
                 <span>Systems Engineer</span>
-                <span> // </span>
+                <span>{" // "}</span>
                 <span>Software Developer</span>
-                <span> // </span>
+                <span>{" // "}</span>
                 <span>Pilot</span>
               </Zoom>
             </h3>
