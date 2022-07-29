@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Background images/textures */
 .skyGradientBackground {
   background: rgb(213, 240, 239);
   background: radial-gradient(
@@ -11,7 +13,6 @@
   );
 }
 
-/* Background images/textures */
 .bg-circuitboard {
   background-image: url("/images/circuit-board.svg");
   background-size: cover;
@@ -19,6 +20,15 @@
   background-position: center center;
 }
 
+.overlay {
+  background: rgb(203,213,225);
+  background: -moz-linear-gradient(180deg, rgba(203,213,225,0.25) 0%, rgba(203,213,225,0.25) 50%, rgba(203,213,225,1) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(203,213,225,0.25) 0%, rgba(203,213,225,0.25) 50%, rgba(203,213,225,1) 100%);
+  background: linear-gradient(180deg, rgba(203,213,225,0.25) 0%, rgba(203,213,225,0.25) 50%, rgba(203,213,225,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cbd5e1",endColorstr="#cbd5e1",GradientType=1);
+}
+
+/* Text clamps */
 .text-clamp-xl {
   font-size: clamp(3.5rem, 10vw, 10rem);
 }

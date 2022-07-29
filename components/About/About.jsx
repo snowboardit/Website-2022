@@ -1,19 +1,14 @@
-import { useParallax } from "react-scroll-parallax";
 import { Slide, Fade } from "react-awesome-reveal";
 import LeftPanel from "./LeftPanel";
 import RightPanel from "./RightPanel";
 import CircuitBG from "./CircuitBG";
 
 function About() {
-  const { ref } = useParallax({
-    speed: -10,
-  });
 
   return (
     <section
       id="about"
-      ref={ref}
-      className="flex flex-col lg:flex-row min-h-screen lg:h-screen w-full justify-center items-center bg-maxLightGray"
+      className="flex flex-col lg:flex-row min-h-screen lg:h-screen w-full justify-center items-center bg-slate-300"
     >
       {/* LEFT PANEL */}
       <div className="flex w-full grow min-h-screen justify-center items-center border-b-[1px] lg:border-r-[1px] border-black/50">

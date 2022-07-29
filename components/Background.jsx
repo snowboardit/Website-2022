@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import * as THREE from "three";
 import CLOUDS from "vanta/dist/vanta.clouds.min";
 import Hero from "../components/Hero";
-import Mask from "../components/Mask";
 import axios from "axios";
 
 // Container host takes precedence, then env file host, then default
@@ -53,12 +52,12 @@ function Background() {
     <section className="relative">
       {/* BACKGROUND CLOUDS - Z-1 */}
       <div
-        className="absolute flex w-full h-screen overflow-x-hidden drop-shadow-md z-[1]"
+        className="absolute flex w-full h-screen overflow-x-hidden z-[1]"
         ref={vantaRef}
       ></div>
 
       {/* MASK - Z-2 */}
-      <Mask />
+      <section className="absolute w-full h-screen overlay z-[2]"></section>
 
       {/* HERO - Z-3 */}
       <Hero />
