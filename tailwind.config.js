@@ -9,7 +9,14 @@ module.exports = {
         maxLightGray: '#DCDDDB',
         maxDarkGray: '#555B6E',
         maxSkyBlue: 'rgb(118,206,240)',
-        maxSkyLightBlue: 'rgb(195,231,255)'
+        maxSkyLightBlue: 'rgb(195,231,255)',
+        darkBlue: "var(--darkBlue)",
+        darkBlueSemiTrans: "var(--darkBlueSemiTrans)",
+        dullBlue: "var(--dullBlue)",
+        lightBlue: "var(--lightBlue)",
+        lightOrange: "var(--lightOrange)",
+        orange: "var(--orange)",
+        orangeSemiTrans: "var(--orangeSemiTrans)",
       },
       backgroundImage: {
         'circuit-pattern': "url('/images/circuit-board.svg')"

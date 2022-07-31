@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Background from '../components/Background'
 import About from '../components/About/About'
+import TransitionSection from '../components/TransitionSection/TransitionSection'
 // import Portfolio from '../components/Portfolio/Portfolio'
 import Loader from '../components/Loader'
 
@@ -23,6 +24,8 @@ export default function Home() {
         <Background />
 
         <About />
+
+        <TransitionSection />
 
         {/* <Portfolio /> */}
 

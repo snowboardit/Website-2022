@@ -22,11 +22,11 @@ function Hero() {
   return (
     <>
       {/* Time of day: dawn | day | dusk | night */}
-      <div className="absolute top-0 left-0 w-full h-16 flex justify-center items-center text-center align-middle text-maxDarkGray/75 z-[3]">
+      <div className="absolute top-0 left-0 w-full h-16 flex justify-center items-center text-center align-middle text-darkBlueSemiTrans z-[3]">
         <SVG
           src={iconSelector(timeOfDay)}
           title={timeOfDay}
-          className="w-8 h-8 fill-maxDarkGray/90"
+          className="w-8 h-8 fill-darkBlueSemiTrans"
         />
       </div>
 
@@ -34,16 +34,16 @@ function Hero() {
       <div className="relative flex flex-col items-center justify-center w-full h-screen z-[3] leading-tight">
         <Fade triggerOnce delay={2800}>
           <div className="flex flex-col justify-center items-center text-center">
-            <h1 className="text-clamp-xl drop-shadow-md text-[#555B6E]/75">
+            <h1 className="text-clamp-xl drop-shadow-md text-darkBlueSemiTrans">
               Max Lareau
             </h1>
 
-            <h3 className="text-clamp-lg drop-shadow-md text-[#555B6E]/75">
+            <h3 className="text-clamp-lg drop-shadow-md text-darkBlueSemiTrans">
               <Zoom delay={3400} triggerOnce cascade className="inline">
                 <span>Systems Engineer</span>
-                <span>{" // "}</span>
+                <span className="text-orange">{" // "}</span>
                 <span>Software Developer</span>
-                <span>{" // "}</span>
+                <span className="text-orange">{" // "}</span>
                 <span>Pilot</span>
               </Zoom>
             </h3>
@@ -66,16 +66,6 @@ function Hero() {
           </div>
         </Fade>
       </div>
-
-      {/* Bouncing arrows */}
-      {/* <Link href="#about">
-        <a className="absolute bottom-0 left-1/2 -translate-x-1/2 z-[3]">
-          <SVG
-            src={"/icons/circle-arrow-down.svg"}
-            className="w-24 h-24 fill-maxDarkGray/90 animate-bounce"
-          />{" "}
-        </a>
-      </Link> */}
     </>
   );
 }
