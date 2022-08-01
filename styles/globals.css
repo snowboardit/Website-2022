@@ -161,7 +161,7 @@
 
 .slider {
   height: 100px;
-  margin: 2rem auto;
+  margin: auto auto 2rem;
   overflow: hidden;
   position: relative;
   width: 100%;
