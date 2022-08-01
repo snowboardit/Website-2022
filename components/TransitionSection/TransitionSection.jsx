@@ -12,8 +12,8 @@ function TransitionSection() {
       >
         <polygon points="0,0 100,0 100,15" />
       </svg>
-      <div className="flex justify-center items-center my-16 px-36 text-8xl text-darkBlue">
-        <div className="flex justify-end items-center grow-[2] max-w-4xl">
+      <div className="flex justify-center items-center my-24 px-36 text-8xl text-darkBlue leading-snug">
+        <div className="grow-[2] pl-16 max-w-4xl">
           <TypeWriter
             onInit={(typewriter) => {
               typewriter

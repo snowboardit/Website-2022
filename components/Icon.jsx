@@ -8,7 +8,7 @@ function Icon({ title, linkTo, src }) {
         <SVG
           title={title}
           src={src ?? ""}
-          className="w-10 h-10 transition-transform hover:scale-125"
+          className="w-10 h-10 fill-darkBlueSemiTrans transition-transform hover:scale-125"
         />
       </a>
     </Link>
