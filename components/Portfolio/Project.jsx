@@ -20,9 +20,12 @@ function Project({ thumbnailPath, thumbnailAlt, title, description, tags }) {
             <p className="text-xl">{description}</p>
           </div>
           <div className="flex space-x-2 mt-4 p-6">
-            {tags.map((tag) => {
+            {tags.map((tag, i) => {
               return (
-                <p className="inline-block py-2 px-4 bg-darkBlue hover:bg-lightBlue text-white hover:text-darkBlue drop-shadow-md rounded-2xl cursor-default transition-colors">
+                <p
+                  key={i}
+                  className="inline-block py-2 px-4 bg-darkBlue hover:bg-lightBlue text-white hover:text-darkBlue drop-shadow-md rounded-2xl cursor-default transition-colors"
+                >
                   {tag}
                 </p>
               );
