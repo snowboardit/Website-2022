@@ -117,8 +117,8 @@ function Portfolio() {
       </div>
 
       {/* Skills Logo Carousel */}
-      <div class="slider">
-        <div class="slide-track">
+      <div className="slider">
+        <div className="slide-track">
           <div className="slide">
             <SVG
               src="/icons/azure-svgrepo.svg"
