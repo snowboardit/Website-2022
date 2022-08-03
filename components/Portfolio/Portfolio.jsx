@@ -30,15 +30,6 @@ const projectsList = [
     design to code and deployment via Netlify.`,
     tags: ["ReactJS", "NextJS", "Tailwind CSS"],
   },
-  {
-    thumbnailPath: "/images/max-website.png",
-    thumbnailAlt: "max website thumbnail",
-    title: "Website Refresh",
-    description: `You are looking at it! With the goal of displaying my skills and
-    portfolio at the same time, I brought this site to life from Figma
-    design to code and deployment via Netlify.`,
-    tags: ["ReactJS", "NextJS", "Tailwind CSS", "GraphQL"],
-  },
 ];
 
 function Portfolio() {

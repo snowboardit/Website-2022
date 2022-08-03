@@ -24,7 +24,7 @@ function Project({ thumbnailPath, thumbnailAlt, title, description, tags }) {
               return (
                 <p
                   key={i}
-                  className="inline-block py-2 px-4 bg-darkBlue hover:bg-lightBlue text-white hover:text-darkBlue drop-shadow-md rounded-2xl cursor-default transition-colors"
+                  className="inline-block py-2 px-4 bg-darkBlue hover:bg-lightBlue text-white text-center hover:text-darkBlue drop-shadow-md rounded-2xl cursor-default transition-colors"
                 >
                   {tag}
                 </p>

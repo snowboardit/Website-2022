@@ -85,6 +85,15 @@ function LogoCarousel() {
             className="fill-lightBlue"
           />
         </div>
+        <div className="slide">
+          <SVG
+            src="/icons/azure-svgrepo.svg"
+            height="100"
+            width="100"
+            alt=""
+            className="fill-lightBlue"
+          />
+        </div>
       </div>
     </div>
   );

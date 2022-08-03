@@ -14,7 +14,6 @@
 }
 
 /* Highlighter underline */
-
 .marker-underline,
 .marker-underline-sm,
 .marker-underline-md {
@@ -71,7 +70,6 @@
 }
 
 /* Background images/textures */
-
 .skyGradientBackground {
   background: rgb(213, 240, 239);
   background: radial-gradient(
@@ -136,7 +134,6 @@
 }
 
 /* Text clamps */
-
 .text-clamp-xl {
   font-size: clamp(3.5rem, 10vw, 10rem);
 }
@@ -155,7 +152,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-100px * 4.5));
+    transform: translateX(calc(-228px * 4.5));
   }
 }
 
@@ -171,8 +168,8 @@
 .slider::before,
 .slider::after {
   content: "";
-  height: 100px;
   position: absolute;
+  height: 100px;
   width: 200px;
   z-index: 2;
 }
@@ -201,14 +198,14 @@
 }
 
 .slide-track {
-  animation: scroll 30s linear infinite;
+  animation: scroll 45s linear infinite;
   display: flex;
-  width: calc(100px * 9);
+  width: calc(228px * 9);
 }
 
 .slide {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 6rem;
+  padding: 0 4rem;
 }

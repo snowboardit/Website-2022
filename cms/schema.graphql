@@ -6,13 +6,13 @@ type User {
   name: String
   email: String
   password: PasswordState
-  posts(
-    where: PostWhereInput! = {}
-    orderBy: [PostOrderByInput!]! = []
+  projects(
+    where: ProjectWhereInput! = {}
+    orderBy: [ProjectOrderByInput!]! = []
     take: Int
     skip: Int! = 0
-  ): [Post!]
-  postsCount(where: PostWhereInput! = {}): Int
+  ): [Project!]
+  projectsCount(where: ProjectWhereInput! = {}): Int
 }
 
 type PasswordState {
@@ -31,7 +31,7 @@ input UserWhereInput {
   id: IDFilter
   name: StringFilter
   email: StringFilter
-  posts: PostManyRelationFilter
+  projects: ProjectManyRelationFilter
 }
 
 input IDFilter {
@@ -79,10 +79,10 @@ input NestedStringFilter {
   not: NestedStringFilter
 }
 
-input PostManyRelationFilter {
-  every: PostWhereInput
-  some: PostWhereInput
-  none: PostWhereInput
+input ProjectManyRelationFilter {
+  every: ProjectWhereInput
+  some: ProjectWhereInput
+  none: ProjectWhereInput
 }
 
 input UserOrderByInput {
@@ -100,14 +100,14 @@ input UserUpdateInput {
   name: String
   email: String
   password: String
-  posts: PostRelateToManyForUpdateInput
+  projects: ProjectRelateToManyForUpdateInput
 }
 
-input PostRelateToManyForUpdateInput {
-  disconnect: [PostWhereUniqueInput!]
-  set: [PostWhereUniqueInput!]
-  create: [PostCreateInput!]
-  connect: [PostWhereUniqueInput!]
+input ProjectRelateToManyForUpdateInput {
+  disconnect: [ProjectWhereUniqueInput!]
+  set: [ProjectWhereUniqueInput!]
+  create: [ProjectCreateInput!]
+  connect: [ProjectWhereUniqueInput!]
 }
 
 input UserUpdateArgs {
@@ -119,21 +119,21 @@ input UserCreateInput {
   name: String
   email: String
   password: String
-  posts: PostRelateToManyForCreateInput
+  projects: ProjectRelateToManyForCreateInput
 }
 
-input PostRelateToManyForCreateInput {
-  create: [PostCreateInput!]
-  connect: [PostWhereUniqueInput!]
+input ProjectRelateToManyForCreateInput {
+  create: [ProjectCreateInput!]
+  connect: [ProjectWhereUniqueInput!]
 }
 
-type Post {
+type Project {
   id: ID!
   title: String
+  description: String
   status: String
-  content: Post_content_Document
-  publishDate: DateTime
-  author: User
+  thumbnail: ImageFieldOutput
+  thumbnailAlt: String
   tags(
     where: TagWhereInput! = {}
     orderBy: [TagOrderByInput!]! = []
@@ -141,58 +141,51 @@ type Post {
     skip: Int! = 0
   ): [Tag!]
   tagsCount(where: TagWhereInput! = {}): Int
+  createdDate: DateTime
+  author: User
 }
 
-type Post_content_Document {
-  document(hydrateRelationships: Boolean! = false): JSON!
+type ImageFieldOutput {
+  id: ID!
+  filesize: Int!
+  width: Int!
+  height: Int!
+  extension: ImageExtension!
+  url: String!
+}
+
+enum ImageExtension {
+  jpg
+  png
+  webp
+  gif
 }
 
 scalar DateTime
   @specifiedBy(url: "https://datatracker.ietf.org/doc/html/rfc3339#section-5.6")
 
-input PostWhereUniqueInput {
+input ProjectWhereUniqueInput {
   id: ID
 }
 
-input PostWhereInput {
-  AND: [PostWhereInput!]
-  OR: [PostWhereInput!]
-  NOT: [PostWhereInput!]
+input ProjectWhereInput {
+  AND: [ProjectWhereInput!]
+  OR: [ProjectWhereInput!]
+  NOT: [ProjectWhereInput!]
   id: IDFilter
   title: StringFilter
-  status: StringNullableFilter
-  publishDate: DateTimeNullableFilter
-  author: UserWhereInput
+  description: StringFilter
+  status: StringFilter
+  thumbnailAlt: StringFilter
   tags: TagManyRelationFilter
+  createdDate: DateTimeNullableFilter
+  author: UserWhereInput
 }
 
-input StringNullableFilter {
-  equals: String
-  in: [String!]
-  notIn: [String!]
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  contains: String
-  startsWith: String
-  endsWith: String
-  mode: QueryMode
-  not: NestedStringNullableFilter
-}
-
-input NestedStringNullableFilter {
-  equals: String
-  in: [String!]
-  notIn: [String!]
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  contains: String
-  startsWith: String
-  endsWith: String
-  not: NestedStringNullableFilter
+input TagManyRelationFilter {
+  every: TagWhereInput
+  some: TagWhereInput
+  none: TagWhereInput
 }
 
 input DateTimeNullableFilter {
@@ -206,33 +199,34 @@ input DateTimeNullableFilter {
   not: DateTimeNullableFilter
 }
 
-input TagManyRelationFilter {
-  every: TagWhereInput
-  some: TagWhereInput
-  none: TagWhereInput
-}
-
-input PostOrderByInput {
+input ProjectOrderByInput {
   id: OrderDirection
   title: OrderDirection
+  description: OrderDirection
   status: OrderDirection
-  publishDate: OrderDirection
+  thumbnailAlt: OrderDirection
+  createdDate: OrderDirection
 }
 
-input PostUpdateInput {
+input ProjectUpdateInput {
   title: String
+  description: String
   status: String
-  content: JSON
-  publishDate: DateTime
-  author: UserRelateToOneForUpdateInput
+  thumbnail: ImageFieldInput
+  thumbnailAlt: String
   tags: TagRelateToManyForUpdateInput
+  createdDate: DateTime
+  author: UserRelateToOneForUpdateInput
 }
 
-input UserRelateToOneForUpdateInput {
-  create: UserCreateInput
-  connect: UserWhereUniqueInput
-  disconnect: Boolean
+input ImageFieldInput {
+  upload: Upload!
 }
+
+"""
+The `Upload` scalar type represents a file upload.
+"""
+scalar Upload
 
 input TagRelateToManyForUpdateInput {
   disconnect: [TagWhereUniqueInput!]
@@ -241,23 +235,26 @@ input TagRelateToManyForUpdateInput {
   connect: [TagWhereUniqueInput!]
 }
 
-input PostUpdateArgs {
-  where: PostWhereUniqueInput!
-  data: PostUpdateInput!
-}
-
-input PostCreateInput {
-  title: String
-  status: String
-  content: JSON
-  publishDate: DateTime
-  author: UserRelateToOneForCreateInput
-  tags: TagRelateToManyForCreateInput
-}
-
-input UserRelateToOneForCreateInput {
+input UserRelateToOneForUpdateInput {
   create: UserCreateInput
   connect: UserWhereUniqueInput
+  disconnect: Boolean
+}
+
+input ProjectUpdateArgs {
+  where: ProjectWhereUniqueInput!
+  data: ProjectUpdateInput!
+}
+
+input ProjectCreateInput {
+  title: String
+  description: String
+  status: String
+  thumbnail: ImageFieldInput
+  thumbnailAlt: String
+  tags: TagRelateToManyForCreateInput
+  createdDate: DateTime
+  author: UserRelateToOneForCreateInput
 }
 
 input TagRelateToManyForCreateInput {
@@ -265,16 +262,21 @@ input TagRelateToManyForCreateInput {
   connect: [TagWhereUniqueInput!]
 }
 
+input UserRelateToOneForCreateInput {
+  create: UserCreateInput
+  connect: UserWhereUniqueInput
+}
+
 type Tag {
   id: ID!
   name: String
-  posts(
-    where: PostWhereInput! = {}
-    orderBy: [PostOrderByInput!]! = []
+  projects(
+    where: ProjectWhereInput! = {}
+    orderBy: [ProjectOrderByInput!]! = []
     take: Int
     skip: Int! = 0
-  ): [Post!]
-  postsCount(where: PostWhereInput! = {}): Int
+  ): [Project!]
+  projectsCount(where: ProjectWhereInput! = {}): Int
 }
 
 input TagWhereUniqueInput {
@@ -287,7 +289,7 @@ input TagWhereInput {
   NOT: [TagWhereInput!]
   id: IDFilter
   name: StringFilter
-  posts: PostManyRelationFilter
+  projects: ProjectManyRelationFilter
 }
 
 input TagOrderByInput {
@@ -297,7 +299,7 @@ input TagOrderByInput {
 
 input TagUpdateInput {
   name: String
-  posts: PostRelateToManyForUpdateInput
+  projects: ProjectRelateToManyForUpdateInput
 }
 
 input TagUpdateArgs {
@@ -307,7 +309,7 @@ input TagUpdateArgs {
 
 input TagCreateInput {
   name: String
-  posts: PostRelateToManyForCreateInput
+  projects: ProjectRelateToManyForCreateInput
 }
 
 """
@@ -325,12 +327,15 @@ type Mutation {
   updateUsers(data: [UserUpdateArgs!]!): [User]
   deleteUser(where: UserWhereUniqueInput!): User
   deleteUsers(where: [UserWhereUniqueInput!]!): [User]
-  createPost(data: PostCreateInput!): Post
-  createPosts(data: [PostCreateInput!]!): [Post]
-  updatePost(where: PostWhereUniqueInput!, data: PostUpdateInput!): Post
-  updatePosts(data: [PostUpdateArgs!]!): [Post]
-  deletePost(where: PostWhereUniqueInput!): Post
-  deletePosts(where: [PostWhereUniqueInput!]!): [Post]
+  createProject(data: ProjectCreateInput!): Project
+  createProjects(data: [ProjectCreateInput!]!): [Project]
+  updateProject(
+    where: ProjectWhereUniqueInput!
+    data: ProjectUpdateInput!
+  ): Project
+  updateProjects(data: [ProjectUpdateArgs!]!): [Project]
+  deleteProject(where: ProjectWhereUniqueInput!): Project
+  deleteProjects(where: [ProjectWhereUniqueInput!]!): [Project]
   createTag(data: TagCreateInput!): Tag
   createTags(data: [TagCreateInput!]!): [Tag]
   updateTag(where: TagWhereUniqueInput!, data: TagUpdateInput!): Tag
@@ -375,14 +380,14 @@ type Query {
   ): [User!]
   user(where: UserWhereUniqueInput!): User
   usersCount(where: UserWhereInput! = {}): Int
-  posts(
-    where: PostWhereInput! = {}
-    orderBy: [PostOrderByInput!]! = []
+  projects(
+    where: ProjectWhereInput! = {}
+    orderBy: [ProjectOrderByInput!]! = []
     take: Int
     skip: Int! = 0
-  ): [Post!]
-  post(where: PostWhereUniqueInput!): Post
-  postsCount(where: PostWhereInput! = {}): Int
+  ): [Project!]
+  project(where: ProjectWhereUniqueInput!): Project
+  projectsCount(where: ProjectWhereInput! = {}): Int
   tags(
     where: TagWhereInput! = {}
     orderBy: [TagOrderByInput!]! = []

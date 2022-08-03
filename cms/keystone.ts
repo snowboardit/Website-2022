@@ -15,21 +15,31 @@ import { lists } from './schema';
 import { withAuth, session } from './auth';
 
 const DB_URL = process.env.DB_URL || ""
+const {
+  ASSET_BASE_URL: baseUrl = 'http://localhost:3000',
+} = process.env;
 
 export default withAuth(
-  // Using the config function helps typescript guide you to the available options.
   config({
-    // the db sets the database provider - we're using sqlite for the fastest startup experience
     db: {
       provider: 'postgresql',
       url: `${DB_URL}`,
     },
-    // This config allows us to set up features of the Admin UI https://keystonejs.com/docs/apis/config#ui
     ui: {
-      // For our starter, we check that someone has session data before letting them see the Admin UI.
-      isAccessAllowed: (context) => !!context.session?.data,
+      isAccessAllowed: (context) => !!context.session?.data, // check that someone has session data before letting them see the Admin UI.
     },
     lists,
+    storage: {
+      local_images: {
+        kind: 'local',
+        type: 'image',
+        generateUrl: path => `${baseUrl}/imagesDB${path}`,
+        serverRoute: {
+          path: '/imagesDB',
+        },
+        storagePath: 'public/imagesDB',
+      },
+    },
     session,
   })
 );
