@@ -16,8 +16,9 @@ import { withAuth, session } from './auth';
 
 const DB_URL = process.env.DB_URL || ""
 const {
-  ASSET_BASE_URL: baseUrl = 'http://localhost:3000',
+  ASSET_BASE_URL: baseUrl = `http://localhost:${process.env.PORT || '5000'}`,
 } = process.env;
+
 
 export default withAuth(
   config({
