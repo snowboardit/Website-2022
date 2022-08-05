@@ -12,7 +12,7 @@ function Portfolio({ projects }) {
 
       {/* Projects Container */}
       <div className="flex h-full flex-col 2xl:flex-row justify-center items-center 2xl:items-start mx-36 my-16 text-darkBlue">
-        {/* Children */}
+        {/* Projects */}
         {projects.map((project, i) => {
           return <Project project={project} key={i} />;
         })}
