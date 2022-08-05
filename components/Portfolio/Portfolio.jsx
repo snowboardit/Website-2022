@@ -2,48 +2,19 @@ import LogoCarousel from "./LogoCarousel";
 import FilterBar from "./FilterBar";
 import Project from "./Project";
 
-const projectsList = [
-  {
-    thumbnailPath: "/images/max-website.png",
-    thumbnailAlt: "max website thumbnail",
-    title: "Website Refresh",
-    description: `You are looking at it! With the goal of displaying my skills and
-    portfolio at the same time, I brought this site to life from Figma
-    design to code and deployment via Netlify.`,
-    tags: ["ReactJS", "NextJS", "Tailwind CSS", "VantaJS"],
-  },
-  {
-    thumbnailPath: "/images/max-website.png",
-    thumbnailAlt: "max website thumbnail",
-    title: "Website Refresh",
-    description: `You are looking at it! With the goal of displaying my skills and
-    portfolio at the same time, I brought this site to life from Figma
-    design to code and deployment via Netlify.`,
-    tags: ["ReactJS", "NextJS", "React-Reveal", "VantaJS"],
-  },
-  {
-    thumbnailPath: "/images/max-website.png",
-    thumbnailAlt: "max website thumbnail",
-    title: "Website Refresh",
-    description: `You are looking at it! With the goal of displaying my skills and
-    portfolio at the same time, I brought this site to life from Figma
-    design to code and deployment via Netlify.`,
-    tags: ["ReactJS", "NextJS", "Tailwind CSS"],
-  },
-];
+function Portfolio({ projects }) {
+  console.log("projects", projects);
 
-function Portfolio() {
   return (
     <section className="flex flex-col min-h-screen bg-darkBlue">
       {/* Filter Bar */}
       <FilterBar />
 
-      {/* Projects */}
-      {/* Container */}
+      {/* Projects Container */}
       <div className="flex h-full flex-col 2xl:flex-row justify-center items-center 2xl:items-start mx-36 my-16 text-darkBlue">
         {/* Children */}
-        {projectsList.map((project, i) => {
-          return <Project {...project} key={i} />;
+        {projects.map((project, i) => {
+          return <Project project={project} key={i} />;
         })}
       </div>
 

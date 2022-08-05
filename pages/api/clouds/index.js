@@ -20,8 +20,8 @@ export default async function handler(req, res) {
 
 /**
  * 1. Pass in current date and time for request
- * 3. Look up appropriate sky colors for given time
- * 4. return appropriate sky colors in json
+ * 2. Look up appropriate sky colors for given time
+ * 3. return appropriate sky colors in json
  * 
  * @param currentDateTime: Date - current date/time
  * @returns currentSkyColor: Object - skycolor object to present to frontend
@@ -40,49 +40,55 @@ async function getCurrentSkyColors(currentDateTime) {
    *  Dusk: sunTimes.sunset - sunTimes.astronomical_twilight_end
    *  Night: all other times
    */
-  const astro_twilight_begin = new Date(sunTimes.astronomical_twilight_begin);
-  const sunrise = new Date(sunTimes.sunrise);
-  const sunset = new Date(sunTimes.sunset);
-  const astro_twilight_end = new Date(sunTimes.astronomical_twilight_end);
 
-  switch (currentDateTime) {
-
-    // Dawn: Between astro twighlight beginning and sunrise
-    case currentDateTime > astro_twilight_begin && currentDateTime < sunrise:
-      currentSkyColor = skyColors.dawn
-
-    // Dusk: Between sunset and astro twighlight end
-    case currentDateTime > sunset && currentDateTime < astro_twilight_end:
-      currentSkyColor = skyColors.dusk
-
-    // Day: Between sunrise and sunset
-    case currentDateTime > sunrise && currentDateTime < sunset:
-      currentSkyColor = skyColors.day
-
-    default:
-      currentSkyColor = skyColors.day
-
-      console.log("HIT DEFAULT CASE - CUR SKY COLOR: \n", currentSkyColor)
-
-      console.log("currentDateTime", currentDateTime.toString())
-      console.log("sunrise", sunrise.toString())
-      console.log("sunset", sunset.toString())
-
-      console.log("currentDateTime > sunrise", currentDateTime > sunrise)
-      console.log("currentDateTime < sunset", currentDateTime < sunset)
+  try {
+    const astro_twilight_begin = new Date(sunTimes.astronomical_twilight_begin);
+    const sunrise = new Date(sunTimes.sunrise);
+    const sunset = new Date(sunTimes.sunset);
+    const astro_twilight_end = new Date(sunTimes.astronomical_twilight_end);
 
 
+    switch (currentDateTime) {
 
+      // Dawn: Between astro twighlight beginning and sunrise
+      case currentDateTime > astro_twilight_begin && currentDateTime < sunrise:
+        currentSkyColor = skyColors.dawn
+
+      // Dusk: Between sunset and astro twighlight end
+      case currentDateTime > sunset && currentDateTime < astro_twilight_end:
+        currentSkyColor = skyColors.dusk
+
+      // Day: Between sunrise and sunset
+      case currentDateTime > sunrise && currentDateTime < sunset:
+        currentSkyColor = skyColors.day
+
+      default:
+        currentSkyColor = skyColors.day
+
+        console.log("HIT DEFAULT CASE - CUR SKY COLOR: \n", currentSkyColor)
+
+        console.log("currentDateTime", currentDateTime.toString())
+        console.log("sunrise", sunrise.toString())
+        console.log("sunset", sunset.toString())
+
+        console.log("currentDateTime > sunrise", currentDateTime > sunrise)
+        console.log("currentDateTime < sunset", currentDateTime < sunset)
+
+
+
+    }
+
+    // console.log("astro twighlight begin", astro_twilight_begin)
+    // console.log("astro twighlight end", astro_twilight_end)
+    // console.log("sunrise", sunrise)
+    // console.log("sunset", sunset)
+
+    console.log("current sky color", currentSkyColor)
+
+    return currentSkyColor
+  } catch (e) {
+    console.log(e)
   }
-
-  // console.log("astro twighlight begin", astro_twilight_begin)
-  // console.log("astro twighlight end", astro_twilight_end)
-  // console.log("sunrise", sunrise)
-  // console.log("sunset", sunset)
-
-  console.log("current sky color", currentSkyColor)
-
-  return currentSkyColor
 
 }
 

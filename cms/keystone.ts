@@ -42,5 +42,11 @@ export default withAuth(
       },
     },
     session,
+    server: {
+      cors: {
+        origin: 'http://localhost:3000',
+      },
+    },
+
   })
 );

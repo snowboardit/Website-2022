@@ -21,7 +21,7 @@ function Background() {
       // console.log("CURRENT SKY COLOR UPDATED STATE: ", skyColor);
     }
 
-    updateSkyColor();
+    // updateSkyColor();
     console.log(currentSkyColor);
   });
 
@@ -50,7 +50,6 @@ function Background() {
 
   return (
     <section className="relative">
-      
       {/* BACKGROUND CLOUDS - Z-1 */}
       <div
         className="absolute flex w-full h-screen overflow-x-hidden z-[1]"
@@ -62,7 +61,6 @@ function Background() {
 
       {/* HERO - Z-3 */}
       <Hero />
-
     </section>
   );
 }
