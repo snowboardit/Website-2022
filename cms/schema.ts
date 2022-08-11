@@ -48,6 +48,8 @@ export const lists: Lists = {
       thumbnail: image({
         storage: 'local_images'
       }),
+      githubLink: text(),
+      projectLink: text(),
       thumbnailAlt: text(),
       tags: relationship({
         ref: 'Tag.projects',

@@ -6,91 +6,161 @@ function LogoCarousel() {
       <div className="slide-track">
         <div className="slide">
           <SVG
-            src="/icons/azure-svgrepo.svg"
+            src="/icons/carousel/AWS.svg"
             height="100"
             width="100"
             alt=""
+            title=""
             className="fill-lightBlue"
           />
         </div>
         <div className="slide">
           <SVG
-            src="/icons/icons8-github.svg"
+            src="/icons/carousel/Azure.svg"
             height="100"
             width="100"
             alt=""
+            title=""
             className="fill-lightBlue"
           />
         </div>
         <div className="slide">
           <SVG
-            src="/icons/icons8-m365.svg"
+            src="/icons/carousel/Github.svg"
             height="100"
             width="100"
             alt=""
+            title=""
             className="fill-lightBlue"
           />
         </div>
         <div className="slide">
           <SVG
-            src="/icons/icons8-python.svg"
+            src="/icons/carousel/GraphQL.svg"
             height="100"
             width="100"
             alt=""
+            title=""
             className="fill-lightBlue"
           />
         </div>
         <div className="slide">
           <SVG
-            src="/icons/node-js-svgrepo.svg"
+            src="/icons/carousel/JavaScript.svg"
             height="100"
             width="100"
             alt=""
+            title=""
             className="fill-lightBlue"
           />
         </div>
         <div className="slide">
           <SVG
-            src="/icons/powershell-svgrepo.svg"
+            src="/icons/carousel/Linux.svg"
             height="100"
             width="100"
             alt=""
+            title=""
             className="fill-lightBlue"
           />
         </div>
         <div className="slide">
           <SVG
-            src="/icons/react-svgrepo.svg"
+            src="/icons/carousel/MongoDB.svg"
             height="100"
             width="100"
             alt=""
+            title=""
             className="fill-lightBlue"
           />
         </div>
         <div className="slide">
           <SVG
-            src="/icons/tailwind-logo.svg"
+            src="/icons/carousel/Office365.svg"
             height="100"
             width="100"
             alt=""
+            title=""
             className="fill-lightBlue"
           />
         </div>
         <div className="slide">
           <SVG
-            src="/icons/server-svgrepo.svg"
+            src="/icons/carousel/Postgres.svg"
             height="100"
             width="100"
             alt=""
+            title=""
             className="fill-lightBlue"
           />
         </div>
         <div className="slide">
           <SVG
-            src="/icons/azure-svgrepo.svg"
+            src="/icons/carousel/PowerShell.svg"
             height="100"
             width="100"
             alt=""
+            title=""
+            className="fill-lightBlue"
+          />
+        </div>
+        <div className="slide">
+          <SVG
+            src="/icons/carousel/Python.svg"
+            height="100"
+            width="100"
+            alt=""
+            title=""
+            className="fill-lightBlue"
+          />
+        </div>
+        <div className="slide">
+          <SVG
+            src="/icons/carousel/React.svg"
+            height="100"
+            width="100"
+            alt=""
+            title=""
+            className="fill-lightBlue"
+          />
+        </div>
+        <div className="slide">
+          <SVG
+            src="/icons/carousel/TailwindCSS.svg"
+            height="100"
+            width="100"
+            alt=""
+            title=""
+            className="fill-lightBlue"
+          />
+        </div>
+        <div className="slide">
+          <SVG
+            src="/icons/carousel/TypeScript.svg"
+            height="100"
+            width="100"
+            alt=""
+            title=""
+            className="fill-lightBlue"
+          />
+        </div>
+        <div className="slide">
+          <SVG
+            src="/icons/carousel/Windows.svg"
+            height="100"
+            width="100"
+            alt=""
+            title=""
+            className="fill-lightBlue"
+          />
+        </div>
+        <div className="slide">
+          <SVG
+            src="/icons/carousel/AWS.svg"
+            height="100"
+            width="100"
+            alt=""
+            title=""
             className="fill-lightBlue"
           />
         </div>

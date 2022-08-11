@@ -133,6 +133,8 @@ type Project {
   description: String
   status: String
   thumbnail: ImageFieldOutput
+  githubLink: String
+  projectLink: String
   thumbnailAlt: String
   tags(
     where: TagWhereInput! = {}
@@ -176,6 +178,8 @@ input ProjectWhereInput {
   title: StringFilter
   description: StringFilter
   status: StringFilter
+  githubLink: StringFilter
+  projectLink: StringFilter
   thumbnailAlt: StringFilter
   tags: TagManyRelationFilter
   createdDate: DateTimeNullableFilter
@@ -204,6 +208,8 @@ input ProjectOrderByInput {
   title: OrderDirection
   description: OrderDirection
   status: OrderDirection
+  githubLink: OrderDirection
+  projectLink: OrderDirection
   thumbnailAlt: OrderDirection
   createdDate: OrderDirection
 }
@@ -213,6 +219,8 @@ input ProjectUpdateInput {
   description: String
   status: String
   thumbnail: ImageFieldInput
+  githubLink: String
+  projectLink: String
   thumbnailAlt: String
   tags: TagRelateToManyForUpdateInput
   createdDate: DateTime
@@ -251,6 +259,8 @@ input ProjectCreateInput {
   description: String
   status: String
   thumbnail: ImageFieldInput
+  githubLink: String
+  projectLink: String
   thumbnailAlt: String
   tags: TagRelateToManyForCreateInput
   createdDate: DateTime

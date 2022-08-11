@@ -1,7 +1,7 @@
 function RightPanel() {
   return (
-    <section className="flex flex-col space-y-8 w-full max-w-2xl text-4xl leading-tight text-left text-darkBlue">
-      <h1 className="text-8xl mb-4">
+    <section className="flex flex-col space-y-8 pb-32 w-full max-w-2xl text-2xl xl:text-4xl leading-tight text-left text-darkBlue">
+      <h1 className="text-5xl xl:text-8xl mb-4">
         Hi! I&apos;m <span className="marker-underline">Max</span>.
       </h1>
       <p>

@@ -1,6 +1,6 @@
 function LeftPanel() {
   return (
-    <div className="relative flex-col max-w-[400px] xl:max-w-[500px] xl:mx-16 -rotate-6 border-b-8 border-orange">
+    <div className="relative flex-col max-w-[400px] xl:max-w-[500px] xl:mx-16 xl:-rotate-6 border-b-8 border-orange">
       <div className="h-full -mb-[450px]">
         <img
           alt="max portrait"

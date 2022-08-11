@@ -42,9 +42,7 @@ function Hero() {
               <Zoom delay={3400} triggerOnce cascade className="inline">
                 <span>Systems Engineer</span>
                 <span className="text-orange">{" // "}</span>
-                <span>Software Developer</span>
-                <span className="text-orange">{" // "}</span>
-                <span>Pilot</span>
+                <span>Web Developer</span>
               </Zoom>
             </h3>
           </div>

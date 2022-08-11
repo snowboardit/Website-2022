@@ -30,6 +30,8 @@ model Project {
   thumbnail_width     Int?
   thumbnail_height    Int?
   thumbnail_id        String?
+  githubLink          String    @default("")
+  projectLink         String    @default("")
   thumbnailAlt        String    @default("")
   tags                Tag[]     @relation("Project_tags")
   createdDate         DateTime?

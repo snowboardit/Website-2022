@@ -8,7 +8,7 @@ function Portfolio({ projects }) {
   return (
     <section className="flex flex-col min-h-screen bg-darkBlue">
       {/* Filter Bar */}
-      <FilterBar />
+      <FilterBar projects={projects} />
 
       {/* Projects Container */}
       <div className="flex h-full flex-col 2xl:flex-row justify-center items-center 2xl:items-start mx-36 my-16 text-darkBlue">

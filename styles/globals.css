@@ -134,6 +134,10 @@
 }
 
 /* Text clamps */
+.text-clamp-2xl {
+  font-size: clamp(2rem, 10vw, 4rem);
+}
+
 .text-clamp-xl {
   font-size: clamp(3.5rem, 10vw, 10rem);
 }
@@ -152,7 +156,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-228px * 4.5));
+    transform: translateX(calc(-228px * 17));
   }
 }
 
@@ -198,9 +202,9 @@
 }
 
 .slide-track {
-  animation: scroll 45s linear infinite;
+  animation: scroll 70s linear infinite;
   display: flex;
-  width: calc(228px * 9);
+  min-width: 100%;
 }
 
 .slide {
