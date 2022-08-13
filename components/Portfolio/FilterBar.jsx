@@ -1,29 +1,27 @@
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
-function FilterBar({ projects }) {
-  const [tags, setTags] = useState([]);
+function FilterBar({ tags, setTags }) {
+  // handle tag toggle
+  function handleTagClick(e) {
+    if (!tags) return;
 
-  // Load all tags into state on startup
-  useEffect(() => {
-    if (tags.length === 0) {
-      let tagsCache = [];
-
-      projects.map((project) => {
-        project.tags.map((tag, i) => {
-          console.log(`project tag - #${i}:\n`, tag.name);
-          if (!tagsCache.includes(tag.name)) {
-            setTags((oldTags) => [...oldTags, tag.name]);
-            console.log(`pushed tag ${tag.name} to tags array`);
+    setTags((oldTags) => {
+      return [
+        ...oldTags.map((tag, i) => {
+          if (e.target.name === tag.name) {
+            return {
+              name: tag.name,
+              selected: !tag.selected,
+            };
           }
-          tagsCache.push(tag.name); // log to cache
-          console.log(`Pushed ${tag.name} to tagsCache`);
-        });
-      });
-    }
-  }, []);
+          return tag;
+        }),
+      ];
+    });
+  }
 
-  if (!tags) return <h1>Loading...</h1>;
+  if (!tags)
+    return <h1 className="text-white text-2xl text-center">Loading tags...</h1>;
 
   return (
     <div className="mx-auto my-10">
@@ -41,14 +39,22 @@ function FilterBar({ projects }) {
           </a>
         </Link>
       </h3>
+
       <div className="flex flex-wrap max-w-6xl items-center justify-start text-center text-darkBlue align-middle px-4 py-2 rounded-3xl border-2 border-orange">
+        {/* {console.log("TAGS LOADED:\n", tags)} */}
         {tags.map((tag, i) => {
           return (
             <button
               key={i}
-              className="inline-block my-1 mx-1 py-2 px-4 bg-dullBlue drop-shadow-md rounded-2xl hover:bg-lightBlue transition-colors"
+              name={tag.name}
+              onClick={handleTagClick}
+              className={`inline-block my-1 mx-1 py-2 px-4 drop-shadow-md rounded-2xl transition-colors ${
+                tag.selected
+                  ? "bg-orange hover:bg-lightOrange active:bg-orange"
+                  : "bg-dullBlue hover:bg-lightBlue active:bg-orange"
+              }`}
             >
-              {tag}
+              {tag.name}
             </button>
           );
         })}

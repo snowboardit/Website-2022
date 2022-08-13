@@ -4,7 +4,7 @@ import SVG from "react-inlinesvg";
 import { revealFadeUp } from "../../utils/CustomRevealAnimations";
 
 function Project({ project }) {
-  return project.status !== "draft" ? (
+  return project.status === "published" ? (
     <Reveal keyframes={revealFadeUp}>
       <div className="relative min-w-[400px] max-w-lg my-8 mx-10 shadow-md">
         <div className="relative h-full px-4">
