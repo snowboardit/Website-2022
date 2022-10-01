@@ -1,8 +1,9 @@
-import Reveal from "react-awesome-reveal";
+import { Reveal } from "react-awesome-reveal";
 import {
   revealFadeLeft,
   revealFadeUp,
 } from "../../utils/CustomRevealAnimations";
+
 import LeftPanel from "./LeftPanel";
 import RightPanel from "./RightPanel";
 

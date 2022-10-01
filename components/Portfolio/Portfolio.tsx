@@ -1,30 +1,7 @@
-// import { useState, useEffect } from "react";
 import LogoCarousel from "./LogoCarousel";
-// import FilterBar from "./FilterBar";
 import Project from "./Project";
 
 function Portfolio({ projects }) {
-  // const [tags, setTags] = useState([]);
-
-  // Load all tags into state on startup from projects array
-  // useEffect(() => {
-  //   if (tags.length === 0) {
-  //     let tagsCache = [];
-
-  //     projects.map((project) => {
-  //       project.tags.map((tag) => {
-  //         if (!tagsCache.includes(tag.name)) {
-  //           setTags((oldTags) => [
-  //             ...oldTags,
-  //             { name: tag.name, selected: false },
-  //           ]);
-  //         }
-  //         tagsCache.push(tag.name);
-  //       });
-  //     });
-  //   }
-  // }, []);
-
   return (
     <section className="flex flex-col min-h-screen bg-darkBlue">
       {/* Filter Bar */}

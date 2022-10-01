@@ -1,4 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { NextApiRequest, NextApiResponse } from 'next'
 import axios from "axios";
 
 // Currently set to general Brunswick area
@@ -10,7 +11,7 @@ const HOST = process.env.HOST || process.env.NEXT_PUBLIC_CHOSEN_HOST
 
 console.log("HOST: ", HOST)
 
-export default async function handler(req, res) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 
   const currentDate = new Date(); // capture date and time now
   const currentSkyColor = await getCurrentSkyColors(currentDate);

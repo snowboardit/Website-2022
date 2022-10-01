@@ -1,6 +1,6 @@
 import { keyframes } from "@emotion/react";
 
-module.exports.revealFadeUp = keyframes`
+export let revealFadeUp = keyframes`
   from {
     transform: translate3d(0, 20%, 0);
     opacity: 0;
@@ -11,7 +11,7 @@ module.exports.revealFadeUp = keyframes`
   }
 `;
 
-module.exports.revealFadeLeft = keyframes`
+export let revealFadeLeft = keyframes`
   from {
     transform: translate3d(-20%, 0, 0);
     opacity: 0;

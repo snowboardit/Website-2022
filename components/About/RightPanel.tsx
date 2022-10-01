@@ -1,4 +1,4 @@
-import Reveal from "react-awesome-reveal";
+import { Reveal } from "react-awesome-reveal";
 import { revealFadeUp } from "../../utils/CustomRevealAnimations";
 
 function RightPanel() {

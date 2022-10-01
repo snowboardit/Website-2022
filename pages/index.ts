@@ -6,7 +6,8 @@ import About from '../components/About/About'
 import TransitionSection from '../components/TransitionSection/TransitionSection'
 import Portfolio from '../components/Portfolio/Portfolio'
 import Loader from '../components/Loader'
-import { CompressedPixelFormat } from 'three'
+import { IProject } from '../types/projects'
+import { GetStaticProps } from 'next'
 
 const client = createClient({
   projectId: "0px9go5b",
@@ -28,34 +29,34 @@ export default function Home({ projects }) {
 
   return (
     <>
-      <Loader loading={loading} />
+    <Loader loading= { loading } />
 
-      <main className={`flex flex-col w-full ${loading && "pointer-events-none overflow-hidden h-screen"}`}>
+    <main className={ `flex flex-col w-full ${loading && "pointer-events-none overflow-hidden h-screen"}` }>
 
-        <Background />
+      <Background />
 
-        <About />
+      < About />
 
-        <TransitionSection />
+      <TransitionSection />
 
-        <Portfolio projects={projects} />
+      < Portfolio projects = { projects } />
 
-      </main>
-    </>
+        </main>
+        < />
   )
 }
 
-export async function getStaticProps() {
+export async const getStaticProps: GetStaticProps = () => {
 
   let projects = await client.fetch(`*[_type == "project"]`);
 
   const projectsData = projects.map((project) => {
 
-    const thumbnailUrlParts = project.thumbnail.asset._ref.split('-');
+    const thumbnailUrlParts: string = project.thumbnail.asset._ref.split('-');
     // image-289cdb2925eead022ad635b2748db496b11595f8-1439x806-png -- what we are given
     // https://cdn.sanity.io/images/0px9go5b/production/289a46c54633f8dd0646364b10ca36aeae5d0be4-1920x1081.png -- target
 
-    let projectTags = [];
+    let projectTags: IProject[] = [];
     if (project.tags) {
       project.tags.map((tag) => {
         projectTags.push(tag.value)

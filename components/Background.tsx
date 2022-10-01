@@ -4,7 +4,6 @@ import CLOUDS from "vanta/dist/vanta.clouds.min";
 import Hero from "../components/Hero";
 import axios from "axios";
 
-// Container host takes precedence, then env file host, then default
 const HOST = process.env.HOST || process.env.NEXT_PUBLIC_CHOSEN_HOST;
 console.log("HOST: ", HOST);
 
@@ -23,7 +22,7 @@ function Background() {
 
         // updateSkyColor();
         console.log(currentSkyColor);
-    });
+    }, []);
 
     // initialize and update vanta background
     useEffect(() => {
@@ -38,6 +37,7 @@ function Background() {
                     minWidth: 300.0,
                     speed: 0.5,
                     THREE,
+
                 })
             );
             console.log("init vanta effect");
@@ -68,5 +68,5 @@ export default Background;
  * @returns currentSkyColor: Object - sky colors for Vanta graphics config
  */
 async function getCurrentSkyColor() {
-    return (await axios.get(`${HOST}/api/clouds`)).data.currentSkyColors;
+    return await axios.get(`${HOST}/api/clouds`);
 }

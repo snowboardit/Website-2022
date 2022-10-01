@@ -1,7 +1,7 @@
 import Link from "next/link";
 import SVG from "react-inlinesvg";
 
-function Icon({ title, linkTo, src, width, height }) {
+function Icon({ title, linkTo, src, width, height }: { title: string, linkTo: string, src: string, width: number, height: number }) {
   return (
     <Link href={linkTo ? linkTo : "maxlareau.com"}>
       <a target="_blank">

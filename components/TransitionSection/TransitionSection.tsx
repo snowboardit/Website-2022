@@ -1,6 +1,5 @@
 import Lottie from "react-lottie-player";
 import programmerLottie from "/public/lotties/programmer.json";
-import TypeWriter from "typewriter-effect";
 
 function TransitionSection() {
   return (
