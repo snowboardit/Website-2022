@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react'
-import { ApolloClient, InMemoryCache, gql } from '@apollo/client'
+import { createClient } from 'next-sanity'
+
 import Background from '../components/Background'
 import About from '../components/About/About'
 import TransitionSection from '../components/TransitionSection/TransitionSection'
 import Portfolio from '../components/Portfolio/Portfolio'
 import Loader from '../components/Loader'
+import { CompressedPixelFormat } from 'three'
 
-const SERVER_URL = process.env.NEXT_PUBLIC_CHOSEN_SERVER || "";
-
-console.log("next public chosen server: ", SERVER_URL);
-
-const client = new ApolloClient({
-  uri: `${SERVER_URL}/api/graphql`,
-  cache: new InMemoryCache(),
+const client = createClient({
+  projectId: "0px9go5b",
+  dataset: "production",
+  apiVersion: "2022-09-30",
+  useCdn: false
 });
 
 export default function Home({ projects }) {
@@ -22,7 +22,7 @@ export default function Home({ projects }) {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false)
-    }, 25)
+    }, 2500)
     // }, 2500)
   });
 
@@ -42,112 +42,42 @@ export default function Home({ projects }) {
 
       </main>
     </>
-
   )
 }
 
 export async function getStaticProps() {
 
-  // const { data } = await client.query({
-  //   query: gql`
-  //     query {
-  //       projects {
-  //           status
-  //           title
-  //           description
-  //           thumbnail {
-  //               url
-  //           }
-  //           thumbnailAlt
-  //           githubLink
-  //           projectLink
-  //           tags {
-  //               name
-  //           }
-  //       }
-  //     }`
-  // });
+  let projects = await client.fetch(`*[_type == "project"]`);
 
-  // console.log("data\n", data);
+  const projectsData = projects.map((project) => {
 
+    const thumbnailUrlParts = project.thumbnail.asset._ref.split('-');
+    // image-289cdb2925eead022ad635b2748db496b11595f8-1439x806-png -- what we are given
+    // https://cdn.sanity.io/images/0px9go5b/production/289a46c54633f8dd0646364b10ca36aeae5d0be4-1920x1081.png -- target
 
-  const fakeProjects = [
-    {
-      "status": "published",
-      "title": "Spark IBC Website",
-      "description": "Carried the site from design to production. Decentralized donation platform, used to promote decentralization and education throughout blockchains built with the Cosmos SDK.",
-      "thumbnail": {
-        "url": "/images/Spark-IBC-Website.png"
-      },
-      "thumbnailAlt": "spark IBC website thumbnail",
-      "githubLink": "https://github.com/sparkibc",
-      "projectLink": "https://sparkibc.zone",
-      "tags": [
-        {
-          "name": "TailwindCSS"
-        },
-        {
-          "name": "ReactJS"
-        },
-        {
-          "name": "NextJS"
-        },
-        {
-          "name": "TypeScript"
-        },
-        {
-          "name": "CosmJS"
-        }
-      ]
-    },
-    {
-      "status": "published",
-      "title": "Personal Website/Portfolio",
-      "description": "My refreshed website for 2022.",
-      "thumbnail": {
-        "url": "/images/max-website.png"
-      },
-      "thumbnailAlt": "maxlareau.com website thumbnail",
-      "githubLink": "https://github.com/snowboardit/",
-      "projectLink": "https://maxlareau.com/",
-      "tags": [
-        {
-          "name": "TailwindCSS"
-        },
-        {
-          "name": "ReactJS"
-        },
-        {
-          "name": "NextJS"
-        },
-        {
-          "name": "ThreeJS"
-        },
-        {
-          "name": "VantaJS"
-        },
-        {
-          "name": "Postgres"
-        },
-        {
-          "name": "ThreeJS"
-        },
-        {
-          "name": "VantaJS"
-        },
-        {
-          "name": "Postgres"
-        },
+    let projectTags = [];
+    if (project.tags) {
+      project.tags.map((tag) => {
+        projectTags.push(tag.value)
+      })
+    }
 
-      ]
-    },
-  ]
-
+    return {
+      title: project.title,
+      status: project.isPublished,
+      description: project.description,
+      githubLink: project.githubLink,
+      projectLink: project.projectLink,
+      thumbnailUrl: `https://cdn.sanity.io/images/0px9go5b/production/${thumbnailUrlParts[1]}-${thumbnailUrlParts[2]}\.${thumbnailUrlParts[3]}`,
+      thumbnailAlt: project.thumbnailAlt,
+      tags: projectTags,
+    }
+  })
+  console.log(projectsData)
 
   return {
     props: {
-      // projects: data.projects,
-      projects: fakeProjects,
+      projects: projectsData,
     },
   };
 }

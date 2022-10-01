@@ -9,8 +9,7 @@ function LogoCarousel() {
             src="/icons/carousel/AWS.svg"
             height="100"
             width="100"
-            alt=""
-            title=""
+            alt="amazon web services logo"
             className="fill-lightBlue"
           />
         </div>
@@ -19,8 +18,7 @@ function LogoCarousel() {
             src="/icons/carousel/Azure.svg"
             height="100"
             width="100"
-            alt=""
-            title=""
+            alt="azure"
             className="fill-lightBlue"
           />
         </div>
@@ -29,8 +27,7 @@ function LogoCarousel() {
             src="/icons/carousel/Github.svg"
             height="100"
             width="100"
-            alt=""
-            title=""
+            alt="github logo"
             className="fill-lightBlue"
           />
         </div>
@@ -39,8 +36,7 @@ function LogoCarousel() {
             src="/icons/carousel/GraphQL.svg"
             height="100"
             width="100"
-            alt=""
-            title=""
+            alt="graphql logo"
             className="fill-lightBlue"
           />
         </div>
@@ -49,8 +45,7 @@ function LogoCarousel() {
             src="/icons/carousel/JavaScript.svg"
             height="100"
             width="100"
-            alt=""
-            title=""
+            alt="javascript logo"
             className="fill-lightBlue"
           />
         </div>
@@ -59,8 +54,7 @@ function LogoCarousel() {
             src="/icons/carousel/Linux.svg"
             height="100"
             width="100"
-            alt=""
-            title=""
+            alt="linux penguin"
             className="fill-lightBlue"
           />
         </div>
@@ -69,8 +63,7 @@ function LogoCarousel() {
             src="/icons/carousel/MongoDB.svg"
             height="100"
             width="100"
-            alt=""
-            title=""
+            alt="mongo db logo"
             className="fill-lightBlue"
           />
         </div>
@@ -79,8 +72,7 @@ function LogoCarousel() {
             src="/icons/carousel/Office365.svg"
             height="100"
             width="100"
-            alt=""
-            title=""
+            alt="office 365 logo"
             className="fill-lightBlue"
           />
         </div>
@@ -89,8 +81,7 @@ function LogoCarousel() {
             src="/icons/carousel/Postgres.svg"
             height="100"
             width="100"
-            alt=""
-            title=""
+            alt="postgres logo"
             className="fill-lightBlue"
           />
         </div>
@@ -99,7 +90,7 @@ function LogoCarousel() {
             src="/icons/carousel/PowerShell.svg"
             height="100"
             width="100"
-            alt=""
+            alt="powershell logo"
             title=""
             className="fill-lightBlue"
           />
@@ -109,7 +100,7 @@ function LogoCarousel() {
             src="/icons/carousel/Python.svg"
             height="100"
             width="100"
-            alt=""
+            alt="python"
             title=""
             className="fill-lightBlue"
           />
@@ -119,7 +110,7 @@ function LogoCarousel() {
             src="/icons/carousel/React.svg"
             height="100"
             width="100"
-            alt=""
+            alt="react"
             title=""
             className="fill-lightBlue"
           />
@@ -129,7 +120,7 @@ function LogoCarousel() {
             src="/icons/carousel/TailwindCSS.svg"
             height="100"
             width="100"
-            alt=""
+            alt="tailwind css logo"
             title=""
             className="fill-lightBlue"
           />
@@ -139,7 +130,7 @@ function LogoCarousel() {
             src="/icons/carousel/TypeScript.svg"
             height="100"
             width="100"
-            alt=""
+            alt="typescript logo"
             title=""
             className="fill-lightBlue"
           />
@@ -149,7 +140,7 @@ function LogoCarousel() {
             src="/icons/carousel/Windows.svg"
             height="100"
             width="100"
-            alt=""
+            alt="windows logo"
             title=""
             className="fill-lightBlue"
           />
@@ -159,7 +150,7 @@ function LogoCarousel() {
             src="/icons/carousel/AWS.svg"
             height="100"
             width="100"
-            alt=""
+            alt="amazon web services logo"
             title=""
             className="fill-lightBlue"
           />

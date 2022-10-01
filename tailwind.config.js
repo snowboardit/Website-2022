@@ -13,6 +13,7 @@ module.exports = {
         darkBlue: "var(--darkBlue)",
         darkBlueSemiTrans: "var(--darkBlueSemiTrans)",
         dullBlue: "var(--dullBlue)",
+        dullBlueSemiTrans: "var(--dullBlueSemiTrans)",
         lightBlue: "var(--lightBlue)",
         lightOrange: "var(--lightOrange)",
         orange: "var(--orange)",

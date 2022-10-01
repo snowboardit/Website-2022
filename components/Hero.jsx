@@ -40,26 +40,30 @@ function Hero() {
 
             <h3 className="text-clamp-lg drop-shadow-md text-darkBlueSemiTrans">
               <Zoom delay={3400} triggerOnce cascade className="inline">
-                <span>Systems Engineer</span>
                 <span className="text-orange">{" // "}</span>
-                <span>Web Developer</span>
+                <span>Full Stack &amp; Web3 Developer</span>
+                <span className="text-orange">{" // "}</span>
               </Zoom>
             </h3>
           </div>
         </Fade>
 
-        <Fade triggerOnce delay={5800}>
+        <Fade triggerOnce delay={4800}>
           <div className="flex justify-center items-center mt-8 space-x-2 md:space-x-4">
             <Icon
               linkTo={"https://github.com/snowboardit"}
               src={"/icons/icons8-github.svg"}
               title={"Github"}
+              width={48}
+              height={48}
             />
 
             <Icon
               linkTo={"https://linkedin.com/in/maxlareau"}
               src={"/icons/icons8-linkedin.svg"}
               title={"LinkedIn"}
+              width={48}
+              height={48}
             />
           </div>
         </Fade>

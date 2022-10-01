@@ -7,6 +7,7 @@
   --darkBlue: #183550;
   --darkBlueSemiTrans: #183550cc;
   --dullBlue: #adc1de;
+  --dullBlueSemiTrans: #adc1de8a;
   --lightBlue: #68b8d7;
   --lightOrange: #ff9919;
   --orange: #ff6633;
@@ -87,6 +88,10 @@
   background-position: center center;
 }
 
+.background-blur {
+  backdrop-filter: blur(25%);
+}
+
 .overlay {
   background: var(--dullBlue);
   background: -moz-linear-gradient(
@@ -133,6 +138,14 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cbd5e1",endColorstr="#cbd5e1",GradientType=1);
 }
 
+/* Bullet Lists */
+li::before {
+  content: "✈ ";
+  font-size: 1.25rem;
+  vertical-align: bottom;
+  transform-box: rotate(50deg);
+}
+
 /* Text clamps */
 .text-clamp-2xl {
   font-size: clamp(2rem, 10vw, 4rem);
@@ -156,7 +169,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-228px * 17));
+    transform: translateX(-100%);
   }
 }
 
@@ -202,7 +215,7 @@
 }
 
 .slide-track {
-  animation: scroll 70s linear infinite;
+  animation: scroll 90s linear infinite;
   display: flex;
   min-width: 100%;
 }
