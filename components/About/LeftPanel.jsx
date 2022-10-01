@@ -1,3 +1,4 @@
+
 function LeftPanel() {
   return (
     <div className="relative flex-col max-w-[400px] xl:max-w-[500px] xl:mx-16 xl:-rotate-6 border-b-8 border-orange">

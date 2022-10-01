@@ -1,6 +1,4 @@
-import Link from "next/link";
 import Reveal from "react-awesome-reveal";
-import SVG from "react-inlinesvg";
 import Icon from "../Icon";
 import { revealFadeUp } from "../../utils/CustomRevealAnimations";
 

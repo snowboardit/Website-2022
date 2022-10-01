@@ -42,10 +42,6 @@ function Background() {
             );
             console.log("init vanta effect");
         }
-
-        // return () => {
-        //   if (vantaEffect) vantaEffect.destroy();
-        // };
     }, [vantaEffect, currentSkyColor]);
 
     return (

@@ -10,7 +10,6 @@ function RightPanel() {
       <ul className="space-y-8">
         <Reveal
           keyframes={revealFadeUp}
-          delay={1000}
           cascade
           triggerOnce
         >
@@ -29,7 +28,7 @@ function RightPanel() {
             {" "}ecosystem
           </li>
           <li>
-            When I'm AFK I love to fly <a href="https://vimeo.com/167592762" rel="noopener noreferrer" target="_blank"><span className="marker-underline-md nowrap">gliders</span></a>.
+            When I&apos;m AFK I love to fly <a href="https://vimeo.com/167592762" rel="noopener noreferrer" target="_blank"><span className="marker-underline-md nowrap">gliders</span></a>.
           </li>
         </Reveal>
       </ul>

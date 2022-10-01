@@ -33,7 +33,7 @@ function Portfolio({ projects }) {
       {/* Title Bar */}
       <div className="relative flex justify-center text-lightBlue text-6xl xl:text-8xl mt-16 mb-8">
         <span>Portfolio</span>
-        <img src="/images/LightBlueGradient.png" className="absolute -translate-y-1/3 opacity-40"></img>
+        <img alt="radial gradient accent" src="/images/LightBlueGradient.png" className="absolute -translate-y-1/3 opacity-40"></img>
       </div>
 
       {/* Projects Container */}

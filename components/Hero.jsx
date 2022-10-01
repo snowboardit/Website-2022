@@ -1,7 +1,8 @@
 // import Link from "next/link";
 import Icon from "../components/Icon";
 import SVG from "react-inlinesvg";
-import { Fade, Zoom } from "react-awesome-reveal";
+import { Fade, Slide } from "react-awesome-reveal";
+import { revealFadeLeft } from "../utils/CustomRevealAnimations";
 
 function Hero() {
   const timeOfDay = "day";
@@ -34,16 +35,20 @@ function Hero() {
       <div className="relative flex flex-col items-center justify-center w-full h-screen z-[3] leading-tight">
         <Fade triggerOnce delay={2800}>
           <div className="flex flex-col justify-center items-center text-center">
-            <h1 className="text-clamp-xl drop-shadow-md text-darkBlueSemiTrans">
-              Max Lareau
-            </h1>
+            <Slide keyframes={revealFadeLeft} triggerOnce delay={3000}>
+              <h1 className="text-clamp-xl drop-shadow-md text-darkBlueSemiTrans">
+                Max Lareau
+              </h1>
+            </Slide>
 
             <h3 className="text-clamp-lg drop-shadow-md text-darkBlueSemiTrans">
-              <Zoom delay={3400} triggerOnce cascade className="inline">
-                <span className="text-orange">{" // "}</span>
-                <span>Full Stack &amp; Web3 Developer</span>
-                <span className="text-orange">{" // "}</span>
-              </Zoom>
+              <Slide keyframes={revealFadeLeft} triggerOnce delay={3400} >
+                <Fade triggerOnce delay={3200} className="inline">
+                  <span className="text-orange">{" // "}</span>
+                  <span>Full Stack Web3 Developer</span>
+                  <span className="text-orange">{" // "}</span>
+                </Fade>
+              </Slide>
             </h3>
           </div>
         </Fade>
