@@ -1,6 +1,6 @@
 {
   "name": "website-2022",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,13 +10,20 @@
   },
   "dependencies": {
     "next": "12.1.0",
+    "next-sanity": "^0.8.4",
     "react": "17.0.2",
+    "react-awesome-reveal": "^3.8.1",
     "react-dom": "17.0.2",
-    "react-spinkit": "^3.0.0",
+    "react-inlinesvg": "^3.0.0",
+    "react-lottie-player": "^1.4.3",
+    "react-scroll-parallax": "^3.2.0",
+    "react-spinners": "^0.11.0",
+    "typewriter-effect": "^2.18.2",
     "vanta": "^0.5.21"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",
+    "axios": "^0.27.2",
     "eslint": "8.9.0",
     "eslint-config-next": "12.1.0",
     "postcss": "^8.4.5",
