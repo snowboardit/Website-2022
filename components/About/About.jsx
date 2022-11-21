@@ -11,7 +11,7 @@ function About() {
     <>
       <section
         id="about"
-        className="flex flex-col lg:flex-row min-h-screen w-full justify-center items-center bg-circuitboard z-[1]"
+        className="flex flex-col lg:flex-row min-h-screen w-full justify-center items-center z-[1]"
       >
         {/* LEFT PANEL */}
         <div className="flex w-full grow xl:min-h-screen py-16 xl:py-0 justify-center items-center">

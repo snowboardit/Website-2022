@@ -1,36 +1,30 @@
 // import Link from "next/link";
 import Icon from "../components/Icon";
-import SVG from "react-inlinesvg";
-import { Slide, Zoom } from "react-awesome-reveal";
+import { Slide } from "react-awesome-reveal";
 import { revealFadeLeft } from "../utils/CustomRevealAnimations";
 
 
 function Hero() {
-  const timeOfDay = "dusk";
-
-  function iconSelector(timeOfDay) {
-    switch (timeOfDay) {
-      case "day":
-        return "/icons/sun-svgrepo-com.svg";
-      case "dawn":
-        return "/icons/sunrise-svgrepo-com.svg";
-      case "dusk":
-        return "/icons/sunset-svgrepo-com.svg";
-      case "night":
-        return "/icons/moon-svgrepo-com.svg";
-    }
-  }
 
   return (
     <>
-      {/* Time of day: dawn | day | dusk | night */}
-      <div className="absolute top-0 left-0 w-full h-16 flex justify-center items-center text-center align-middle text-darkBlueSemiTrans z-[3]">
-        <SVG
-          src={iconSelector(timeOfDay)}
-          title={timeOfDay}
-          className="w-8 h-8 fill-darkBlueSemiTrans"
-        />
-      </div>
+      {/* Navbar */}
+      <nav className="absolute top-0 flex p-4 justify-center w-full text-darkBlue z-[4]">
+        <div className="flex justify-between items-center w-[48rem]">
+          <a href="/" className="hover:text-darkBlueSemiTrans transition-colors duration-150">
+            <h1 className="font-medium text-4xl">ML</h1>
+          </a>
+
+          <div className="space-x-8">
+            <a href="#about" className="text-2xl hover:text-darkBlueSemiTrans transition-colors duration-150">
+              About
+            </a>
+            <a href="#portfolio" className="text-2xl hover:text-darkBlueSemiTrans transition-colors duration-150">
+              Portfolio
+            </a>
+          </div>
+        </div>
+      </nav>
 
       {/* Name, subtitle, and socials */}
       <div className="relative flex flex-col items-center justify-center w-full h-screen z-[3] leading-tight">
@@ -52,6 +46,14 @@ function Hero() {
 
         <Slide keyframes={revealFadeLeft} triggerOnce delay={4000}>
           <div className="flex justify-center items-center mt-8 space-x-2 md:space-x-4">
+            <Icon
+              linkTo={"https://github.com/cosmwatch"}
+              src={"/icons/icons8-github.svg"}
+              title={"Web3 Github"}
+              width={48}
+              height={48}
+            />
+            
             <Icon
               linkTo={"https://github.com/snowboardit"}
               src={"/icons/icons8-github.svg"}

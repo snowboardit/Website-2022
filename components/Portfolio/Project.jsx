@@ -16,7 +16,7 @@ function Project({ project }) {
             />
           </a>
         </div>
-        <div className="pt-[24rem] rounded-3xl bg-dullBlue border-2 border-orange shadow-md">
+        <div className="pt-[24rem] rounded-3xl bg-whiteTrans border-2 border-orange shadow-md">
           <div className="px-6 -mt-48">
             <h1 className="text-4xl font-semibold pt-8 pb-4">
               <span className="marker-underline-sm">{project.title}</span>
@@ -49,7 +49,7 @@ function Project({ project }) {
               return (
                 <p
                   key={i}
-                  className="inline-block border-2 border-darkBlueSemiTrans my-1 mx-1 py-2 px-4 bg-dullBlue hover:bg-lightBlue text-darkBlue text-center drop-shadow-md rounded-2xl cursor-default transition-colors ease-in-out"
+                  className="inline-block border-2 border-darkBlueSemiTrans my-1 mx-1 py-2 px-4 bg-blue-400/10 hover:bg-lightBlue text-darkBlue text-center drop-shadow-md rounded-2xl cursor-default transition-colors ease-in-out"
                 >
                   {tag.toString()}
                 </p>

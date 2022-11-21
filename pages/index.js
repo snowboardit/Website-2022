@@ -6,6 +6,7 @@ import About from '../components/About/About'
 import TransitionSection from '../components/TransitionSection/TransitionSection'
 import Portfolio from '../components/Portfolio/Portfolio'
 import Loader from '../components/Loader'
+import LogoCarousel from '../components/Portfolio/LogoCarousel'
 
 const client = createClient({
   projectId: "0px9go5b",
@@ -34,7 +35,7 @@ export default function Home({ projects }) {
 
         <About />
 
-        <TransitionSection />
+        <LogoCarousel />
 
         <Portfolio projects={projects} />
 

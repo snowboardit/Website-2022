@@ -3,7 +3,7 @@ import { revealFadeUp } from "../../utils/CustomRevealAnimations";
 
 function RightPanel() {
   return (
-    <section className="flex flex-col mb-32 lg:mb-0 w-full max-w-2xl text-2xl xl:text-3xl leading-tight text-left text-darkBlue border-2 border-orange rounded-3xl p-8 bg-dullBlueSemiTrans shadow-md">
+    <section className="flex flex-col mb-32 lg:mb-0 w-full max-w-2xl text-2xl xl:text-3xl leading-tight text-left text-darkBlue border-2 border-orange rounded-3xl p-8 bg-whiteTrans shadow-md">
       <h1 className="text-5xl xl:text-7xl mb-12">
         Hi! I&apos;m <span className="marker-underline nowrap">Max</span>.
       </h1>

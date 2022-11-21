@@ -26,14 +26,14 @@ function Portfolio({ projects }) {
   // }, []);
 
   return (
-    <section className="flex flex-col min-h-screen bg-darkBlue">
+    <section className="flex flex-col min-h-screen">
       {/* Filter Bar */}
       {/* <FilterBar tags={tags} setTags={setTags} /> */}
 
       {/* Title Bar */}
-      <div className="relative flex justify-center text-lightBlue text-6xl xl:text-8xl mt-16 mb-8">
+      <div className="relative flex justify-center text-darkBlue text-6xl xl:text-8xl mt-24 mb-8">
         <span>Portfolio</span>
-        <img src="/images/LightBlueGradient.png" className="absolute -translate-y-1/3 opacity-40"></img>
+        <img src="/images/LightBlueGradient.png" className="absolute -translate-y-1/3 opacity-60"></img>
       </div>
 
       {/* Projects Container */}
@@ -45,9 +45,6 @@ function Portfolio({ projects }) {
           return <Project project={project} key={i} />;
         })}
       </div>
-
-      {/* Skills Logo Carousel */}
-      <LogoCarousel />
     </section>
   );
 }
