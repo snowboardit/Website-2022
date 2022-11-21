@@ -2,26 +2,39 @@
 import Icon from "../components/Icon";
 import { Slide } from "react-awesome-reveal";
 import { revealFadeLeft } from "../utils/CustomRevealAnimations";
-
+import { Link } from "react-scroll";
+import { useState, useEffect } from "react";
 
 function Hero() {
+
+  const [atPageTop, setAtPageTop] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            setAtPageTop(false);
+        } else {
+            setAtPageTop(true);
+        }
+    });
+  }, []);
 
   return (
     <>
       {/* Navbar */}
-      <nav className="absolute top-0 flex p-4 justify-center w-full text-darkBlue z-[4]">
-        <div className="flex justify-between items-center w-[48rem]">
-          <a href="/" className="hover:text-darkBlueSemiTrans transition-colors duration-150">
-            <h1 className="font-medium text-4xl">ML</h1>
-          </a>
+      <nav className={`fixed top-0 flex p-4 justify-center w-full text-darkBlue z-[4] transition-all duration-300 ${atPageTop ? '' : 'bg-whiteTrans backdrop-blur-sm shadow-sm'}`}>
+        <div className="flex justify-between items-center w-[56rem]">
+          <Link activeClass="text-darkBlueSemiTrans" to="hero" spy={true} smooth={true} duration={850} className="hover:cursor-pointer hover:text-darkBlueSemiTrans transition-colors duration-150">
+            <h1 className="font-medium text-4xl marker-underline nowrap">ML</h1>
+          </Link>
 
           <div className="space-x-8">
-            <a href="#about" className="text-2xl hover:text-darkBlueSemiTrans transition-colors duration-150">
+            <Link activeClass="text-darkBlueSemiTrans marker-underline nowrap" to="about" spy={true} smooth={true} duration={850} className="text-2xl hover:cursor-pointer hover:text-darkBlueSemiTrans transition-colors duration-150">
               About
-            </a>
-            <a href="#portfolio" className="text-2xl hover:text-darkBlueSemiTrans transition-colors duration-150">
+            </Link>
+            <Link activeClass="text-darkBlueSemiTrans marker-underline nowrap" to="portfolio" spy={true} smooth={true} duration={850} className="text-2xl hover:cursor-pointer hover:text-darkBlueSemiTrans transition-colors duration-150">
               Portfolio
-            </a>
+            </Link>
           </div>
         </div>
       </nav>

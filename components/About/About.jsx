@@ -1,4 +1,5 @@
 import Reveal from "react-awesome-reveal";
+import { Element } from "react-scroll";
 import {
   revealFadeLeft,
   revealFadeUp,
@@ -9,8 +10,8 @@ import RightPanel from "./RightPanel";
 function About() {
   return (
     <>
-      <section
-        id="about"
+      <Element
+        name="about"
         className="flex flex-col lg:flex-row min-h-screen w-full justify-center items-center z-[1]"
       >
         {/* LEFT PANEL */}
@@ -26,7 +27,7 @@ function About() {
             <RightPanel />
           </Reveal>
         </div>
-      </section>
+      </Element>
       <section className="w-full reverse-overlay z-[2]"></section>
     </>
   );

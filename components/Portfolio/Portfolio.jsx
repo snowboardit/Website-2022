@@ -1,4 +1,5 @@
 // import { useState, useEffect } from "react";
+import { Element } from "react-scroll";
 import LogoCarousel from "./LogoCarousel";
 // import FilterBar from "./FilterBar";
 import Project from "./Project";
@@ -26,12 +27,12 @@ function Portfolio({ projects }) {
   // }, []);
 
   return (
-    <section className="flex flex-col min-h-screen">
+    <Element name="portfolio" className="flex flex-col min-h-screen">
       {/* Filter Bar */}
       {/* <FilterBar tags={tags} setTags={setTags} /> */}
 
       {/* Title Bar */}
-      <div className="relative flex justify-center text-darkBlue text-6xl xl:text-8xl mt-24 mb-8">
+      <div className="relative flex justify-center text-darkBlue text-6xl xl:text-8xl mt-32 mb-8">
         <span>Portfolio</span>
         <img src="/images/LightBlueGradient.png" className="absolute -translate-y-1/3 opacity-60"></img>
       </div>
@@ -45,7 +46,7 @@ function Portfolio({ projects }) {
           return <Project project={project} key={i} />;
         })}
       </div>
-    </section>
+    </Element>
   );
 }
 

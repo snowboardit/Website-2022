@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Element } from "react-scroll";
 import * as THREE from "three";
 import CLOUDS from "vanta/dist/vanta.clouds.min";
 import Hero from "../components/Hero";
@@ -60,7 +61,7 @@ function Background() {
     }, [vantaEffect, currentSkyColor]);
 
     return (
-        <section className="relative">
+        <Element name="hero" className="relative">
             {/* BACKGROUND CLOUDS - Z-1 */}
             <div
                 className="fixed flex w-full h-screen overflow-x-hidden z-[-2]"
@@ -72,7 +73,7 @@ function Background() {
 
             {/* HERO - Z-3 */}
             <Hero />
-        </section>
+        </Element>
     );
 }
 
