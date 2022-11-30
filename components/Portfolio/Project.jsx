@@ -1,5 +1,5 @@
 import Reveal from "react-awesome-reveal";
-import Icon from "../Icon";
+import Icon from "../Icon/Icon";
 import { revealFadeUp } from "../../utils/CustomRevealAnimations";
 
 function Project({ project }) {
@@ -12,13 +12,13 @@ function Project({ project }) {
             <img
               src={project.thumbnailUrl}
               alt={project.thumbnailAlt}
-              className="-mb-48 rounded-xl drop-shadow-lg hover:scale-105 transition-transform"
+              className="-mb-48 transition-transform rounded-xl drop-shadow-lg hover:scale-105"
             />
           </a>
         </div>
         <div className="pt-[24rem] rounded-3xl bg-whiteTrans border-2 border-orange shadow-md">
           <div className="px-6 -mt-48">
-            <h1 className="text-4xl font-semibold pt-8 pb-4">
+            <h1 className="pt-8 pb-4 text-4xl font-medium">
               <span className="marker-underline-sm">{project.title}</span>
             </h1>
             {/* Link container */}
@@ -49,7 +49,7 @@ function Project({ project }) {
               return (
                 <p
                   key={i}
-                  className="inline-block border-2 border-darkBlueSemiTrans my-1 mx-1 py-2 px-4 bg-blue-400/10 hover:bg-lightBlue text-darkBlue text-center drop-shadow-md rounded-2xl cursor-default transition-colors ease-in-out"
+                  className="inline-block px-4 py-2 mx-1 my-1 text-center transition-colors ease-in-out border-2 cursor-default border-darkBlueSemiTrans bg-blue-400/10 hover:bg-blue-400/0 text-darkBlue drop-shadow-md rounded-2xl"
                 >
                   {tag.toString()}
                 </p>

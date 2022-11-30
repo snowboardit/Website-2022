@@ -3,36 +3,28 @@ import { revealFadeUp } from "../../utils/CustomRevealAnimations";
 
 function RightPanel() {
   return (
-    <section className="flex flex-col mb-32 lg:mb-0 w-full max-w-2xl text-2xl xl:text-3xl leading-tight text-left text-darkBlue border-2 border-orange rounded-3xl p-8 bg-whiteTrans shadow-md">
-      <h1 className="text-5xl xl:text-7xl mb-12">
-        Hi! I&apos;m <span className="marker-underline nowrap">Max</span>.
+    <section className="flex flex-col w-full max-w-2xl p-8 mb-32 text-2xl leading-tight text-left border-2 shadow-md text-darkBlue lg:mb-0 border-orange rounded-3xl bg-whiteTrans">
+      <h1 className="mb-8 text-4xl xl:text-5xl">
+        Hi! I&apos;m <span className="marker-underline">Max</span> 👋
       </h1>
-      <ul className="space-y-8">
+      
+
+      <div className="space-y-4">
         <Reveal
-          keyframes={revealFadeUp}
-          delay={1000}
           cascade
-          triggerOnce
+          keyframes={revealFadeUp}
         >
-          <li>
-            I&apos;ve been exploring and tinkering with computers for more than{" "}
-            <span className="marker-underline-md nowrap">fifteen years</span>.
-          </li>
-          <li>
-            Full stack{" "}<span className="marker-underline-md nowrap">web development</span> is my passion.
-          </li>
-          <li>
-            Recently, I have been developing <span className="marker-underline-md nowrap">Web3 applications</span> in the{" "}
-            <a href="https://cosmos.network/" rel="noopener noreferrer" target="_blank">
-              Cosmos
-            </a>
-            {" "}ecosystem
-          </li>
-          <li>
-            When I'm AFK I love to fly <a href="https://vimeo.com/167592762" rel="noopener noreferrer" target="_blank"><span className="marker-underline-md nowrap">gliders</span></a>.
-          </li>
+          <p>
+            I am a web developer with a background in IT infrastructure and audio/video engineering.
+          </p>
+          <p>
+            What began as completing <a href="https://www.udemy.com/course/the-web-developer-bootcamp/">Colt Steele's Web Developer Bootcamp</a> quickly snowballed into a full-time profession and hobby for me.
+          </p>
+          <p>
+            Through my autodidact nature and guidance from the community, I have 3 years of combined full stack web development experience and more.
+          </p>
         </Reveal>
-      </ul>
+      </div>
     </section>
   );
 }

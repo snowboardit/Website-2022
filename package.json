@@ -1,6 +1,6 @@
 {
   "name": "website-2022",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -19,7 +19,7 @@
     "react-scroll": "^1.8.8",
     "react-spinners": "^0.11.0",
     "typewriter-effect": "^2.18.2",
-    "vanta": "^0.5.21"
+    "vanta": "^0.5.24"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",

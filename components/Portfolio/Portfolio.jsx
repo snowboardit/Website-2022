@@ -1,48 +1,20 @@
-// import { useState, useEffect } from "react";
 import { Element } from "react-scroll";
-import LogoCarousel from "./LogoCarousel";
-// import FilterBar from "./FilterBar";
 import Project from "./Project";
 
 function Portfolio({ projects }) {
-  // const [tags, setTags] = useState([]);
-
-  // Load all tags into state on startup from projects array
-  // useEffect(() => {
-  //   if (tags.length === 0) {
-  //     let tagsCache = [];
-
-  //     projects.map((project) => {
-  //       project.tags.map((tag) => {
-  //         if (!tagsCache.includes(tag.name)) {
-  //           setTags((oldTags) => [
-  //             ...oldTags,
-  //             { name: tag.name, selected: false },
-  //           ]);
-  //         }
-  //         tagsCache.push(tag.name);
-  //       });
-  //     });
-  //   }
-  // }, []);
 
   return (
     <Element name="portfolio" className="flex flex-col min-h-screen">
-      {/* Filter Bar */}
-      {/* <FilterBar tags={tags} setTags={setTags} /> */}
-
       {/* Title Bar */}
-      <div className="relative flex justify-center text-darkBlue text-6xl xl:text-8xl mt-32 mb-8">
+      <div className="relative flex justify-center mt-32 mb-8 text-6xl text-darkBlue xl:text-8xl">
         <span>Portfolio</span>
-        <img src="/images/LightBlueGradient.png" className="absolute -translate-y-1/3 opacity-60"></img>
+        <img src="/images/LightBlueGradient.png" className="absolute opacity-50 -translate-y-1/3"></img>
       </div>
 
       {/* Projects Container */}
-      <div className="flex h-full flex-col 2xl:flex-row justify-center items-center 2xl:items-start mx-36 my-16 text-darkBlue">
+      <div className="flex flex-col items-center justify-center h-full my-16 2xl:flex-row 2xl:items-start mx-36 text-darkBlue">
         {/* Projects */}
-        {/* {console.log("PROJECTS:\n", projects)} */}
         {projects.map((project, i) => {
-          // if (project.tags)
           return <Project project={project} key={i} />;
         })}
       </div>

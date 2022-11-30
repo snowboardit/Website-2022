@@ -1,6 +1,6 @@
 import {} from "react-awesome-reveal"
 import Lottie from "react-lottie-player";
-import planeLottie from "../public/lotties/plane-loader.json";
+import planeLottie from "../../public/lotties/plane-loader.json";
 
 function Loader({ loading }) {
   return (

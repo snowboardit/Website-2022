@@ -21,11 +21,11 @@ function FilterBar({ tags, setTags }) {
   }
 
   if (!tags)
-    return <h1 className="text-white text-2xl text-center">Loading tags...</h1>;
+    return <h1 className="text-2xl text-center text-white">Loading tags...</h1>;
 
   return (
     <div className="mx-auto my-10">
-      <h3 className="pl-6 py-1 text-dullBlue">
+      <h3 className="py-1 pl-6 text-dullBlue">
         Powered by{" "}
         <Link href="https://keystonejs.com/">
           <a className="hover:text-lightBlue" rel="noreferrer noopener">
@@ -40,8 +40,7 @@ function FilterBar({ tags, setTags }) {
         </Link>
       </h3>
 
-      <div className="flex flex-wrap max-w-6xl items-center justify-start text-center text-darkBlue align-middle px-4 py-2 rounded-3xl border-2 border-orange">
-        {/* {console.log("TAGS LOADED:\n", tags)} */}
+      <div className="flex flex-wrap items-center justify-start max-w-6xl px-4 py-2 text-center align-middle border-2 text-darkBlue rounded-3xl border-orange">
         {tags.map((tag, i) => {
           return (
             <button
