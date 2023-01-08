@@ -1,36 +1,37 @@
-import Reveal from "react-awesome-reveal";
-import { Element } from "react-scroll";
+import React from 'react';
+import Reveal from 'react-awesome-reveal';
+import { Element } from 'react-scroll';
 import {
-  revealFadeLeft,
-  revealFadeUp,
-} from "../../utils/CustomRevealAnimations";
-import LeftPanel from "./LeftPanel";
-import RightPanel from "./RightPanel";
+	revealFadeLeft,
+	revealFadeUp,
+} from '../../utils/CustomRevealAnimations';
+import LeftPanel from './LeftPanel';
+import RightPanel from './RightPanel';
 
 function About() {
-  return (
-    <>
-      <Element
-        name="about"
-        className="flex flex-col lg:flex-row min-h-screen w-full justify-center items-center z-[1]"
-      >
-        {/* LEFT PANEL */}
-        <div className="flex w-full grow xl:min-h-screen py-16 xl:py-0 justify-center items-center">
-          <Reveal triggerOnce keyframes={revealFadeLeft}>
-            <LeftPanel />
-          </Reveal>
-        </div>
+	return (
+		<>
+			<Element
+				name="about"
+				className="flex flex-col lg:flex-row min-h-screen w-full justify-center items-center z-[1]"
+			>
+				{/* LEFT PANEL */}
+				<div className="flex items-center w-full lg:justify-center lg:py-16 grow xl:min-h-screen xl:py-0">
+					<Reveal triggerOnce keyframes={revealFadeLeft}>
+						<LeftPanel />
+					</Reveal>
+				</div>
 
-        {/* RIGHT PANEL */}
-        <div className="flex justify-center xl:justify-start items-center lg:h-screen w-full p-4">
-          <Reveal triggerOnce keyframes={revealFadeUp}>
-            <RightPanel />
-          </Reveal>
-        </div>
-      </Element>
-      <section className="w-full reverse-overlay z-[2]"></section>
-    </>
-  );
+				{/* RIGHT PANEL */}
+				<div className="flex items-center justify-center w-full px-4 lg:p-4 xl:justify-start lg:h-screen">
+					<Reveal triggerOnce keyframes={revealFadeUp}>
+						<RightPanel />
+					</Reveal>
+				</div>
+			</Element>
+			<section className="w-full reverse-overlay z-[2]"></section>
+		</>
+	);
 }
 
 export default About;

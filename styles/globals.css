@@ -13,7 +13,7 @@
   --orange: #ff6633;
   --orangeTrans: #ff663382;
   --orangeSemiTrans: #ff6633cc;
-  --whiteTrans: #ffffff30;
+  --whiteTrans: rgba(255, 255, 255, 0.188);
 }
 
 /* Highlighter underline */
@@ -23,7 +23,6 @@
   position: relative;
   text-decoration: none;
   display: inline-block;
-  color: inherit;
   z-index: 1;
 }
 
@@ -73,12 +72,13 @@
 }
 
 /* Background images/textures */
-.skyGradientBackground {
-  background: rgb(213, 240, 239);
-  background: radial-gradient(
-    circle,
-    rgba(213, 240, 239, 1) 0%,
-    rgba(118, 206, 240, 1) 100%
+.whiteTransGradient {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0.25) 90%,
+    rgba(255, 255, 255, 0) 100%
   );
 }
 
@@ -160,9 +160,14 @@ li::before {
 .text-clamp-xl {
   font-size: clamp(3.5rem, 10vw, 7rem);
 }
+/* 7rem == 112px */
+/* 112px/1.618 == 69px */
+/* 69px/1.618 == 42px */
+/* 42px/16px == 2.625rem */
+/* 42px/1.618 == 26px */
 
 .text-clamp-lg {
-  font-size: clamp(0.85rem, 2.39vw, 2.4rem);
+  font-size: clamp(1.55rem, 4.44vw, 3.1rem);
 }
 
 .text-clamp-md {
