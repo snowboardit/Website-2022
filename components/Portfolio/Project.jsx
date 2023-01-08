@@ -54,7 +54,7 @@ function Project({ project }) {
 								return (
 									<p
 										key={i}
-										className="inline-block px-2 py-1 mx-1 my-1 text-center transition-colors ease-in-out border-2 cursor-default whitespace-nowrap md:py-2 md:px-4 border-darkBlueSemiTrans bg-blue-400/10 hover:bg-blue-400/0 text-darkBlue drop-shadow-md rounded-2xl"
+										className="inline-block px-3 py-1 mx-1 my-1 text-sm transition-colors ease-in-out border-2 cursor-default sm:text-base center whitespace-nowrap border-darkBlueSemiTrans bg-blue-400/10 hover:bg-blue-400/0 text-darkBlue drop-shadow-md rounded-2xl"
 									>
 										{tag.toString()}
 									</p>
