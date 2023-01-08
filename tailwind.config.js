@@ -35,7 +35,7 @@ module.exports = {
 				slideInLeft: 'slideInLeft 1s ease-in-out',
 			},
 			screens: {
-				xs: '320px',
+				xs: '400px',
 			},
 		},
 	},

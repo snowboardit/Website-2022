@@ -11,7 +11,7 @@ const Contact = () => {
 				<h2 className="mb-8 text-5xl md:mb-12 md:text-8xl marker-underline">
 					Get in touch!
 				</h2>
-				<p className="mx-2 mb-8 text-base md:mx-0 md:mb-8 md:text-2xl">
+				<p className="max-w-xs mx-2 mb-8 text-base md:max-w-full md:mx-0 md:mb-8 md:text-2xl">
 					Thanks for checking out my website! If you have a project in
 					mind or would like to discuss potential collaboration,
 					please don't hesitate to get in touch. Click the button
@@ -29,7 +29,7 @@ const Contact = () => {
 						fill="white"
 						className="inline-block mr-4"
 					/>
-					<span className="align-middle">Email Me</span>
+					<span className="text-base align-middle md:text-lg">Email Me</span>
 				</a>
 			</div>
 		</Element>

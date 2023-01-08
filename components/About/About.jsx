@@ -13,10 +13,10 @@ function About() {
 		<>
 			<Element
 				name="about"
-				className="flex flex-col lg:flex-row min-h-screen w-full justify-center items-center z-[1]"
+				className="flex flex-col lg:flex-row min-h-screen w-full justify-center items-center z-[1] pt-20 lg:pt-14"
 			>
 				{/* LEFT PANEL */}
-				<div className="flex items-center w-full lg:justify-center lg:py-16 grow xl:min-h-screen xl:py-0">
+				<div className="flex items-center justify-center w-full lg:py-16 grow xl:min-h-screen xl:py-0">
 					<Reveal triggerOnce keyframes={revealFadeLeft}>
 						<LeftPanel />
 					</Reveal>
