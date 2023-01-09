@@ -8,13 +8,10 @@ import {
 import LeftPanel from './LeftPanel';
 import RightPanel from './RightPanel';
 import useWindowSize from '../../hooks/useWindowSize';
+import isMobile from '../../utils/isMobile';
 
 function About() {
 	const { width } = useWindowSize();
-	
-	const isMobile = (width) => {
-		return width < 768
-	};
 	
 	return (
 		<>
