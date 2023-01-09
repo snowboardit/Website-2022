@@ -30,14 +30,6 @@ function Hero() {
 				<Slide keyframes={revealFadeUp} triggerOnce delay={600}>
 					<div className="flex items-center justify-center mt-8 space-x-2 md:space-x-4">
 						<Icon
-							linkTo={'https://github.com/cosmwatch'}
-							src={'/icons/icons8-github.svg'}
-							title={'Web3 Github'}
-							width={42}
-							height={42}
-						/>
-
-						<Icon
 							linkTo={'https://github.com/snowboardit'}
 							src={'/icons/icons8-github.svg'}
 							title={'Github'}

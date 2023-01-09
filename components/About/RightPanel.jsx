@@ -11,14 +11,15 @@ function RightPanel() {
 			<div className="space-y-2 md:space-y-4">
 				<Reveal cascade triggerOnce keyframes={revealFadeUp}>
 					<p>
-						As a full stack web developer with an eclectic background
-						in IT and audio/video engineering, I bring a unique
-						perspective to my work.
+						As a full stack web developer with an eclectic
+						background in IT and audio/video engineering, I bring a
+						unique perspective to my work.
 					</p>
 					<p>
-						As a software developer of 5+ years, I am dedicated to
-						creating intuitive and powerful web applications that
-						solve real-world problems.
+						With over three years of experience in software
+						development, I am dedicated to creating intuitive and
+						powerful web applications that solve real-world
+						problems.
 					</p>
 					<p>
 						I am committed to delivering high-quality work and
