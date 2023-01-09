@@ -1,4 +1,5 @@
 import { createClient } from 'next-sanity';
+import LogRocket from 'logrocket';
 
 import Background from '../components/Background/Background';
 import About from '../components/About/About';
@@ -6,6 +7,10 @@ import Portfolio from '../components/Portfolio/Portfolio';
 import LogoCarousel from '../components/Portfolio/LogoCarousel';
 import Contact from '../components/Contact/Contact';
 
+// INIT LOG ROCKET
+LogRocket.init('fny2je/max-website');
+
+// INIT SANITY
 const client = createClient({
 	projectId: '0px9go5b',
 	dataset: 'production',
@@ -55,7 +60,6 @@ export async function getStaticProps() {
 			tags: projectTags,
 		};
 	});
-	console.log(projectsData);
 
 	return {
 		props: {
