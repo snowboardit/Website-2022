@@ -27,7 +27,7 @@ function RightPanel() {
 					</p>
 					<p>
 						From concept to creation, I'm ready to help you bring
-						your next project to life. Let's chat!
+						your next project to life.
 					</p>
 				</Reveal>
 			</div>
