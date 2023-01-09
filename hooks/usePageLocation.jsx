@@ -11,6 +11,7 @@ function usePageLocation() {
 				setAtPageTop(true);
 			}
 		});
+		return () => window.removeEventListener('scroll', () => {});
 	}, []);
 
 	return { atPageTop };

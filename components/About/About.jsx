@@ -7,8 +7,15 @@ import {
 } from '../../utils/CustomRevealAnimations';
 import LeftPanel from './LeftPanel';
 import RightPanel from './RightPanel';
+import useWindowSize from '../../hooks/useWindowSize';
 
 function About() {
+	const { width } = useWindowSize();
+	
+	const isMobile = (width) => {
+		return width < 768
+	};
+	
 	return (
 		<>
 			<Element
@@ -17,7 +24,7 @@ function About() {
 			>
 				{/* LEFT PANEL */}
 				<div className="flex items-center justify-center w-full lg:py-16 grow xl:min-h-screen xl:py-0">
-					<Reveal triggerOnce keyframes={revealFadeLeft}>
+					<Reveal triggerOnce keyframes={isMobile(width) ? revealFadeUp : revealFadeLeft}>
 						<LeftPanel />
 					</Reveal>
 				</div>

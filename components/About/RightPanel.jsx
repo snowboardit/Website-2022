@@ -3,12 +3,12 @@ import { revealFadeUp } from '../../utils/CustomRevealAnimations';
 
 function RightPanel() {
 	return (
-		<section className="flex flex-col w-full p-8 mb-32 text-base leading-tight text-left border-2 shadow-md sm:max-w-2xl md:text-2xl text-darkBlue lg:mb-0 border-orange rounded-b-3xl xs:rounded-3xl bg-whiteTrans">
-			<h1 className="mb-8 text-3xl md:text-4xl xl:text-5xl">
+		<section className="flex flex-col max-w-[500px] p-8 mb-32 text-base leading-tight text-left border-2 shadow-md md:max-w-2xl md:text-2xl text-darkBlue lg:mb-0 border-orange rounded-b-3xl xs:rounded-3xl bg-whiteTrans">
+			<h1 className="mb-4 text-3xl md:mb-8 md:text-4xl xl:text-5xl">
 				Hi! I&apos;m <span className="marker-underline">Max</span> 👋
 			</h1>
 
-			<div className="space-y-4">
+			<div className="space-y-2 md:space-y-4">
 				<Reveal cascade triggerOnce keyframes={revealFadeUp}>
 					<p>
 						As a full stack web developer with an eclectic background
