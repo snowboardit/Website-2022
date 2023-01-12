@@ -9,7 +9,7 @@ function Hero() {
         Max Lareau
       </h1>
 
-      <h3 className="text-sm -mt-2 sm:text-xl md:text-3xl drop-shadow-md text-[#555B6E]/75 whitespace-nowrap">
+      <h3 className="text-[.85rem] -mt-2 sm:text-xl md:text-3xl drop-shadow-md text-[#555B6E]/75 whitespace-nowrap">
         Systems Engineer // Software Developer // Pilot
       </h3>
 
