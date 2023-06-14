@@ -1,4 +1,4 @@
-# 2023 + Maxlareau.com = 🍾🎉!
+# 2022 + Maxlareau.com = 🍾🎉!
 A home for my most prized and recent projects.
 
 🗃️ **Stack**<br>
